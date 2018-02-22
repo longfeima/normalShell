@@ -10,7 +10,6 @@
 		14471497203E9557000211AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14471496203E9557000211AC /* AppDelegate.m */; };
 		1447149D203E9557000211AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1447149B203E9557000211AC /* Main.storyboard */; };
 		1447149F203E9557000211AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1447149E203E9557000211AC /* Assets.xcassets */; };
-		144714A2203E9557000211AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144714A0203E9557000211AC /* LaunchScreen.storyboard */; };
 		144714A5203E9557000211AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 144714A4203E9557000211AC /* main.m */; };
 		14DFF237203E9E2900583046 /* UITabBarController+DsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DFF231203E9E2900583046 /* UITabBarController+DsTabBarController.m */; };
 		14DFF238203E9E2900583046 /* DsBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DFF236203E9E2900583046 /* DsBaseTabBar.m */; };
@@ -61,7 +60,6 @@
 		14471496203E9557000211AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1447149C203E9557000211AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1447149E203E9557000211AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		144714A1203E9557000211AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		144714A3203E9557000211AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144714A4203E9557000211AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14DFF231203E9E2900583046 /* UITabBarController+DsTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+DsTabBarController.m"; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				144714AB203E9594000211AC /* Base */,
 				1447149B203E9557000211AC /* Main.storyboard */,
 				1447149E203E9557000211AC /* Assets.xcassets */,
-				144714A0203E9557000211AC /* LaunchScreen.storyboard */,
 				144714A3203E9557000211AC /* Info.plist */,
 				144714A4203E9557000211AC /* main.m */,
 			);
@@ -554,7 +551,6 @@
 			files = (
 				14DFF2A2203EB17C00583046 /* icon_xinxi_nor@2x.png in Resources */,
 				14DFF29C203EB17C00583046 /* icon_qqkongjian_nor@2x.png in Resources */,
-				144714A2203E9557000211AC /* LaunchScreen.storyboard in Resources */,
 				14DFF29F203EB17C00583046 /* icon_weibo_press@2x.png in Resources */,
 				14DFF299203EB17C00583046 /* icon_pengyou_press@2x.png in Resources */,
 				14DFF2A0203EB17C00583046 /* icon_weixinhaoyou_nor@2x.png in Resources */,
@@ -670,14 +666,6 @@
 				1447149C203E9557000211AC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		144714A0203E9557000211AC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				144714A1203E9557000211AC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
