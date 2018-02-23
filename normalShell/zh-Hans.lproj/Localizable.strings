@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+//============================tab=================================================
+"DS_TAB_HOME" = "主页";
+"DS_TAB_NOTE" = "事记";
+"DS_TAB_MINE" = "我的";
+//======================home=================================
+"DS_HOME_TITLE" = "主页";
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "关于我们";
+"DS_MINE_ABOUTUS_DETAIL" = "第六梦";
+"DS_MINE_VERSION_TITLE" = "当前版本";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "设置";
+"DS_MINE_SETTING_DETAIL" = " ";

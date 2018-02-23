@@ -19,6 +19,8 @@
 
 #import "DsColorConfig.h"
 #import "DDGlobalConstant.h"
+#import "DsLanguageConfig.h"
+
 
 #import "sShowTisWindow.h"
 
@@ -26,6 +28,7 @@
 #import "UIColor+DDSC.h"
 #import "NSString+DDSC.h"
 #import "DsUtils.h"
+
 
 //_______________________________+++++++ pod
 #import <Masonry/Masonry.h>

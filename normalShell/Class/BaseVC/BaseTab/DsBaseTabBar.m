@@ -84,7 +84,7 @@
     if (!_itemLb) {
         _itemLb = [UILabel new];
         CGRect frame = self.frame;
-        _itemLb.frame = CGRectMake(frame.size.width/2 - 15, CGRectGetMaxY(self.itemImageV.frame) + 3, 26, 10);
+        _itemLb.frame = CGRectMake(frame.size.width/2 - 20, CGRectGetMaxY(self.itemImageV.frame) + 3, 36, 10);
         _itemLb.textAlignment = 1;
         _itemLb.font = [UIFont boldSystemFontOfSize:12];//TAB_APP_FONT(12);
         _itemLb.textColor = DS_COLOR_HEXCOLOR(@"A7A7A7");//[UIColor whiteColor];//DS_COLOR_HEXCOLOR(@"A7A7A7");

@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
+    self.navigationView.title = DSLocalizedString(DS_HOME_TITLE);
     // Do any additional setup after loading the view.
 }
 

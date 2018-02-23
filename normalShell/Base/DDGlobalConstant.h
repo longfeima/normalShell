@@ -13,11 +13,13 @@
 
 #define DDBoolValue(strValue) (strValue) ? [strValue intValue] : (-1)
 
-#define DDHandleBlock(block, ...)         if(block) { block(__VA_ARGS__); }
-
+#define DDHandleBlock(block, ...)            if(block) { block(__VA_ARGS__); }
 //#define DDAPPDelegate                     ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
-#define DDBundleVersion                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define DDBundleVersion                         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+/**本地化语言获取*/
+
+#define DSLocalizedString(key)                   [NSString stringWithFormat:@"%@", NSLocalizedString(key, nil)]
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,10 +31,7 @@
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
 
-//#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-//#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-//#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
-//#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
 
 #define IS_IPHONE_4 (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
 #define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)

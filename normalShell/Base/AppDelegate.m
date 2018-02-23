@@ -147,7 +147,7 @@ static BOOL isProduction = FALSE;
     
     self.homeVC = [[DsHomeViewController alloc] init];
     self.homeNav = [[UINavigationController alloc] initWithRootViewController:self.homeVC];
-    UITabBarItem *homeItem = [[UITabBarItem alloc] initWithTitle:@"首页"
+    UITabBarItem *homeItem = [[UITabBarItem alloc] initWithTitle:DSLocalizedString(DS_TAB_HOME)
                                                           image:[[UIImage imageNamed:@"icon_tab_homepage_nor"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                   selectedImage:[[UIImage imageNamed:@"icon_tab_homepage_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     self.homeVC.tabBarItem = homeItem;
@@ -155,7 +155,7 @@ static BOOL isProduction = FALSE;
     
     self.noteVC = [[DsNoteViewController alloc] init];
     self.noteNav = [[UINavigationController alloc] initWithRootViewController:self.noteVC];
-    UITabBarItem *noteItem = [[UITabBarItem alloc] initWithTitle:@"计划"
+    UITabBarItem *noteItem = [[UITabBarItem alloc] initWithTitle:DSLocalizedString(DS_TAB_NOTE)
                                                           image:[[UIImage imageNamed:@"icon_tab_message_nor"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                   selectedImage:[[UIImage imageNamed:@"icon_tab_message_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     self.noteVC.tabBarItem = noteItem;
@@ -165,7 +165,7 @@ static BOOL isProduction = FALSE;
     
     self.mineVC = [[DsMineViewController alloc] init];
     self.mineNav = [[UINavigationController alloc] initWithRootViewController:self.mineVC];
-    UITabBarItem *mineItem = [[UITabBarItem alloc] initWithTitle:@"我的"
+    UITabBarItem *mineItem = [[UITabBarItem alloc] initWithTitle:DSLocalizedString(DS_TAB_MINE)
                                                            image:[[UIImage imageNamed:@"icon_tab_my_nor"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                    selectedImage:[[UIImage imageNamed:@"icon_tab_my_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     self.mineVC.tabBarItem = mineItem;
