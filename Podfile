@@ -6,5 +6,7 @@ pod "Masonry"
 pod "JPush"
 pod "AFNetworking" 
 pod "SDWebImage", '4.0.0'
+pod "FMDB"
+
 
 end

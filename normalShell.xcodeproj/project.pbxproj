@@ -13,6 +13,17 @@
 		14461058203FAF7000C6492D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14461057203FAF6F00C6492D /* 1.jpg */; };
 		1446107B203FC1F800C6492D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1446107D203FC1F800C6492D /* InfoPlist.strings */; };
 		14461099203FE8E300C6492D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14461095203FE27400C6492D /* Localizable.strings */; };
+		144610A12040608600C6492D /* DDCustomCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */; };
+		144610A22040608600C6492D /* DDCustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109E2040608600C6492D /* DDCustomCollectionView.m */; };
+		144610A32040608600C6492D /* headeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A02040608600C6492D /* headeView.m */; };
+		144610A8204060E500C6492D /* DsHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A4204060E400C6492D /* DsHomeHeadView.m */; };
+		144610A9204060E500C6492D /* DsHomeViewFunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A6204060E500C6492D /* DsHomeViewFunctionCell.m */; };
+		144610AF2040660A00C6492D /* DsCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610AE2040660A00C6492D /* DsCalendarViewController.m */; };
+		144610B22040663000C6492D /* DsClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610B12040663000C6492D /* DsClockViewController.m */; };
+		144610B5204066F800C6492D /* DsWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610B4204066F800C6492D /* DsWeatherViewController.m */; };
+		144610B82040671700C6492D /* DsNoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610B72040671700C6492D /* DsNoteListViewController.m */; };
+		144610BD2040771B00C6492D /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610BC2040771B00C6492D /* YTKKeyValueStore.m */; };
+		144610C02040775A00C6492D /* DsDatabaseManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610BF2040775A00C6492D /* DsDatabaseManger.m */; };
 		14471497203E9557000211AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14471496203E9557000211AC /* AppDelegate.m */; };
 		1447149D203E9557000211AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1447149B203E9557000211AC /* Main.storyboard */; };
 		1447149F203E9557000211AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1447149E203E9557000211AC /* Assets.xcassets */; };
@@ -79,6 +90,28 @@
 		14461094203FE27400C6492D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14461096203FE27700C6492D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		14461097203FE27A00C6492D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1446109B2040608600C6492D /* DDCustomCollectionFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCollectionFlowLayout.h; sourceTree = "<group>"; };
+		1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCustomCollectionFlowLayout.m; sourceTree = "<group>"; };
+		1446109D2040608600C6492D /* DDCustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCollectionView.h; sourceTree = "<group>"; };
+		1446109E2040608600C6492D /* DDCustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCustomCollectionView.m; sourceTree = "<group>"; };
+		1446109F2040608600C6492D /* headeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headeView.h; sourceTree = "<group>"; };
+		144610A02040608600C6492D /* headeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headeView.m; sourceTree = "<group>"; };
+		144610A4204060E400C6492D /* DsHomeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsHomeHeadView.m; sourceTree = "<group>"; };
+		144610A5204060E500C6492D /* DsHomeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsHomeHeadView.h; sourceTree = "<group>"; };
+		144610A6204060E500C6492D /* DsHomeViewFunctionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsHomeViewFunctionCell.m; sourceTree = "<group>"; };
+		144610A7204060E500C6492D /* DsHomeViewFunctionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsHomeViewFunctionCell.h; sourceTree = "<group>"; };
+		144610AD2040660A00C6492D /* DsCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DsCalendarViewController.h; sourceTree = "<group>"; };
+		144610AE2040660A00C6492D /* DsCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsCalendarViewController.m; sourceTree = "<group>"; };
+		144610B02040663000C6492D /* DsClockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DsClockViewController.h; sourceTree = "<group>"; };
+		144610B12040663000C6492D /* DsClockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsClockViewController.m; sourceTree = "<group>"; };
+		144610B3204066F800C6492D /* DsWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DsWeatherViewController.h; sourceTree = "<group>"; };
+		144610B4204066F800C6492D /* DsWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsWeatherViewController.m; sourceTree = "<group>"; };
+		144610B62040671700C6492D /* DsNoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DsNoteListViewController.h; sourceTree = "<group>"; };
+		144610B72040671700C6492D /* DsNoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsNoteListViewController.m; sourceTree = "<group>"; };
+		144610BB2040771B00C6492D /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		144610BC2040771B00C6492D /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		144610BE2040775A00C6492D /* DsDatabaseManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DsDatabaseManger.h; sourceTree = "<group>"; };
+		144610BF2040775A00C6492D /* DsDatabaseManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsDatabaseManger.m; sourceTree = "<group>"; };
 		14471492203E9557000211AC /* normalShell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = normalShell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14471495203E9557000211AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14471496203E9557000211AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,8 +215,40 @@
 		14461059203FB3BB00C6492D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				144610BE2040775A00C6492D /* DsDatabaseManger.h */,
+				144610BF2040775A00C6492D /* DsDatabaseManger.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		1446109A2040608600C6492D /* DDCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1446109B2040608600C6492D /* DDCustomCollectionFlowLayout.h */,
+				1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */,
+				1446109D2040608600C6492D /* DDCustomCollectionView.h */,
+				1446109E2040608600C6492D /* DDCustomCollectionView.m */,
+				1446109F2040608600C6492D /* headeView.h */,
+				144610A02040608600C6492D /* headeView.m */,
+			);
+			path = DDCollectionView;
+			sourceTree = "<group>";
+		};
+		144610B9204076EF00C6492D /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				144610BA2040771A00C6492D /* YTKeyValueStore */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		144610BA2040771A00C6492D /* YTKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				144610BB2040771B00C6492D /* YTKKeyValueStore.h */,
+				144610BC2040771B00C6492D /* YTKKeyValueStore.m */,
+			);
+			path = YTKeyValueStore;
 			sourceTree = "<group>";
 		};
 		14471489203E9557000211AC = {
@@ -207,6 +272,7 @@
 		14471494203E9557000211AC /* normalShell */ = {
 			isa = PBXGroup;
 			children = (
+				144610B9204076EF00C6492D /* Vendors */,
 				14461059203FB3BB00C6492D /* Manager */,
 				14DFF276203EB13300583046 /* Custom */,
 				144714B2203E99BF000211AC /* Model */,
@@ -260,6 +326,14 @@
 			children = (
 				14DFF26E203EAECE00583046 /* DsHomeViewController.h */,
 				14DFF26F203EAECE00583046 /* DsHomeViewController.m */,
+				144610AD2040660A00C6492D /* DsCalendarViewController.h */,
+				144610AE2040660A00C6492D /* DsCalendarViewController.m */,
+				144610B02040663000C6492D /* DsClockViewController.h */,
+				144610B12040663000C6492D /* DsClockViewController.m */,
+				144610B3204066F800C6492D /* DsWeatherViewController.h */,
+				144610B4204066F800C6492D /* DsWeatherViewController.m */,
+				144610B62040671700C6492D /* DsNoteListViewController.h */,
+				144610B72040671700C6492D /* DsNoteListViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -267,6 +341,10 @@
 		144714AF203E9605000211AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				144610A5204060E500C6492D /* DsHomeHeadView.h */,
+				144610A4204060E400C6492D /* DsHomeHeadView.m */,
+				144610A7204060E500C6492D /* DsHomeViewFunctionCell.h */,
+				144610A6204060E500C6492D /* DsHomeViewFunctionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -429,6 +507,7 @@
 		14DFF276203EB13300583046 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				1446109A2040608600C6492D /* DDCollectionView */,
 				14DFF277203EB17C00583046 /* STips */,
 			);
 			path = Custom;
@@ -675,23 +754,31 @@
 				14DFF242203E9E3400583046 /* DDBaseNavigationView.m in Sources */,
 				14DFF26A203EA6A500583046 /* UITabBarItem+CustomBadge.m in Sources */,
 				14DFF2A7203EB17C00583046 /* sScreenView.m in Sources */,
+				144610A22040608600C6492D /* DDCustomCollectionView.m in Sources */,
 				14DFF264203EA6A500583046 /* UITabBar+Extension.m in Sources */,
+				144610C02040775A00C6492D /* DsDatabaseManger.m in Sources */,
 				14DFF268203EA6A500583046 /* UIControl+FCAcceptEventInteravl.m in Sources */,
 				14DFF269203EA6A500583046 /* UIButton+DDSC.m in Sources */,
 				144714A5203E9557000211AC /* main.m in Sources */,
 				14DFF252203EA69900583046 /* DsUtils.m in Sources */,
 				14DFF2A6203EB17C00583046 /* sKeyboardView.m in Sources */,
 				14DFF2AA203EB17C00583046 /* sShowTisWindow.m in Sources */,
+				144610B82040671700C6492D /* DsNoteListViewController.m in Sources */,
 				14DFF2AB203EB17C00583046 /* sTipsView.m in Sources */,
 				14DFF267203EA6A500583046 /* NSString+DDSC.m in Sources */,
 				14DFF237203E9E2900583046 /* UITabBarController+DsTabBarController.m in Sources */,
 				14461056203FADBF00C6492D /* DsValue1TableViewCell.m in Sources */,
+				144610A8204060E500C6492D /* DsHomeHeadView.m in Sources */,
 				14DFF265203EA6A500583046 /* UIView+Frame.m in Sources */,
 				14DFF266203EA6A500583046 /* NSData+DDSC.m in Sources */,
 				14471497203E9557000211AC /* AppDelegate.m in Sources */,
+				144610B22040663000C6492D /* DsClockViewController.m in Sources */,
+				144610A9204060E500C6492D /* DsHomeViewFunctionCell.m in Sources */,
+				144610A32040608600C6492D /* headeView.m in Sources */,
 				14DFF263203EA6A500583046 /* UIImage+DDSC.m in Sources */,
 				14DFF2A5203EB17C00583046 /* sDateView.m in Sources */,
 				14DFF241203E9E3400583046 /* DDBaseNavHorizontalView.m in Sources */,
+				144610BD2040771B00C6492D /* YTKKeyValueStore.m in Sources */,
 				14DFF2B1203EC08400583046 /* DsNoteViewController.m in Sources */,
 				14DFF26D203EAEBC00583046 /* DsMineViewController.m in Sources */,
 				14DFF238203E9E2900583046 /* DsBaseTabBar.m in Sources */,
@@ -700,7 +787,10 @@
 				14DFF2A4203EB17C00583046 /* sAlertView.m in Sources */,
 				14DFF249203EA3AD00583046 /* UIColor+DDSC.m in Sources */,
 				14461050203FAC8700C6492D /* DsMoreHeadView.m in Sources */,
+				144610B5204066F800C6492D /* DsWeatherViewController.m in Sources */,
+				144610A12040608600C6492D /* DDCustomCollectionFlowLayout.m in Sources */,
 				14DFF2A8203EB17C00583046 /* sShareView.m in Sources */,
+				144610AF2040660A00C6492D /* DsCalendarViewController.m in Sources */,
 				14DFF2A9203EB17C00583046 /* sSheetView.m in Sources */,
 				14DFF24E203EA60000583046 /* DsBaseViewController.m in Sources */,
 			);

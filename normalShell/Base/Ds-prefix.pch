@@ -20,7 +20,7 @@
 #import "DsColorConfig.h"
 #import "DDGlobalConstant.h"
 #import "DsLanguageConfig.h"
-
+#import "DsDatabaseManger.h"
 
 #import "sShowTisWindow.h"
 
