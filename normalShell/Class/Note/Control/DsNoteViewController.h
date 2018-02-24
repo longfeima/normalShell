@@ -9,5 +9,7 @@
 #import "DsBaseViewController.h"
 
 @interface DsNoteViewController : DsBaseViewController
-
+//数据源
+@property (nonatomic, strong) NSMutableArray *datas;
 @end
+

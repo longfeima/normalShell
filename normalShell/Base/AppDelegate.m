@@ -11,7 +11,7 @@
 #import "DsMineViewController.h"
 #import "DsStartViewController.h"
 #import "DsNoteViewController.h"
-
+#import <IQKeyboardManager.h>
 
 static NSString *appKey = @"dd9e7a6cb1f34fb10e94c48d";
 static NSString *channel = @"APP Store";
@@ -44,12 +44,26 @@ static BOOL isProduction = FALSE;
     [self confSDKWithDict:launchOptions];
     [self configAppearance];
     [self creatTab];
+    [self initCaiPiao];
 //    [self configStartVC];
     
     return YES;
 }
 
-
+- (void)initCaiPiao{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.toolbarDoneBarButtonItemText = @"完成";
+    
+    _baseWindow = [[UIWindow  alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _baseWindow.backgroundColor = [UIColor whiteColor];
+    self.maiTabBarController = [[MainTabBarController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.maiTabBarController];
+    nav.navigationBarHidden = YES;
+    _baseWindow.rootViewController = nav;
+}
 - (void)configStartVC {
     BOOL guided = YES;//[DsUtils fetchFromUserDefaultsWithKey:UD_FIRST_START([DsGlobalManager sharedClient].globalModel.appVersion)];
     

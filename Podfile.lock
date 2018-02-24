@@ -14,32 +14,71 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AJNotificationView (0.7)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - IQKeyboardManager (4.0.10)
   - JCore (1.1.6)
   - JPush (3.0.7):
     - JCore (~> 1.1.6)
   - Masonry (1.1.0)
+  - MJRefresh (3.1.12)
+  - Reachability (3.2)
+  - RTLabel (1.0.1)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - Shimmer (1.0.2)
+  - SVProgressHUD (2.1.2)
+  - TOWebViewController (2.2.6):
+    - TOWebViewController/Core (= 2.2.6)
+  - TOWebViewController/Core (2.2.6)
+  - UIAlertView+Blocks (0.9)
+  - UMengAnalytics (4.2.4)
+  - WSProgressHUD (1.1.1):
+    - Shimmer
+  - YTKNetwork (2.0.1):
+    - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - AJNotificationView (= 0.7)
   - FMDB
+  - IQKeyboardManager (= 4.0.10)
   - JPush
   - Masonry
+  - MJRefresh (= 3.1.12)
+  - Reachability (= 3.2)
+  - RTLabel (= 1.0.1)
   - SDWebImage (= 4.0.0)
+  - SVProgressHUD (= 2.1.2)
+  - TOWebViewController (= 2.2.6)
+  - UIAlertView+Blocks (= 0.9)
+  - UMengAnalytics (= 4.2.4)
+  - WSProgressHUD (= 1.1.1)
+  - YTKNetwork (= 2.0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AJNotificationView: fe9f2e3b806ab71e3705047ed243a283b7155731
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
   JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
   JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RTLabel: 6005d07fef57b101097c4271f804daae3110cbca
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
+  UIAlertView+Blocks: a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
+  YTKNetwork: f21ad2073b3353a11d257593a2859f2904bbec75
 
-PODFILE CHECKSUM: a61f27c556fc131974a82c5150d314a307c8963a
+PODFILE CHECKSUM: b63c8aed6ad5c8a0bb4aead2390ce7f3a8d8bdea
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.beta.2
