@@ -89,6 +89,9 @@
     [self getLoactionAndSendRequest];
     
 }
+- (void)DDRightBarLabelItemClick{
+    
+}
 
 - (void)changeCity {
     
@@ -115,7 +118,7 @@
 //创建背景视图
 - (void)createBackgroundView {
     self.backgroudView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_normal.jpg"]];
-    _backgroudView.frame = self.view.bounds;
+    _backgroudView.frame = CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT);
     [self.view addSubview:self.backgroudView];
 }
 

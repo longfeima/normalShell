@@ -13,7 +13,7 @@
 #import "DsNoteViewController.h"
 #import <IQKeyboardManager.h>
 
-static NSString *appKey = @"dd9e7a6cb1f34fb10e94c48d";
+static NSString *appKey = @"6943b77ca1a7b35800302fa4";
 static NSString *channel = @"APP Store";
 static BOOL isProduction = FALSE;
 
@@ -43,8 +43,8 @@ static BOOL isProduction = FALSE;
     // Override point for customization after application launch.
     [self confSDKWithDict:launchOptions];
     [self configAppearance];
-    [self creatTab];
     [self initCaiPiao];
+    [self creatTab];
 //    [self configStartVC];
     
     return YES;

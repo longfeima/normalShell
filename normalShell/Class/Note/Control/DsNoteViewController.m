@@ -39,6 +39,7 @@
 }
 - (void)click{
     DsWeatherViewController1 *desweather = [[DsWeatherViewController1 alloc] init];
+    desweather.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:desweather animated:YES];
 }
 #pragma mark ————— 创建UI界面 —————

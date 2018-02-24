@@ -8,7 +8,7 @@
 
 #import "DsWeatherViewController.h"
 
-@interface DsWeatherViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface DsWeatherViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
