@@ -13,6 +13,35 @@
 "DS_TAB_MINE" = "Mine";
 //======================home=================================
 "DS_HOME_TITLE" = "Home";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "Notes";
+"DS_HOME_CELL_NOTES_DETAIL"  = "A diary";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "Alarm";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "Remind";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "Calendar";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Important moment";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "Weather";
+"DS_HOME_CELL_WEATHER_DETAIL" = "The weather forecast";
+
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "Notes";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "Clocks";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "cancel";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "confirm";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "Calendar";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "preview";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "next";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "Weather";
+
 //======================note=================================
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "about us";

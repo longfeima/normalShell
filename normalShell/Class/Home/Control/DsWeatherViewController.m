@@ -23,7 +23,7 @@
     [self tableView];
     self.navigationView.navType = DD_NormalType;
     
-    self.navigationView.title = @"天气";
+    self.navigationView.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);;
 }
 
 

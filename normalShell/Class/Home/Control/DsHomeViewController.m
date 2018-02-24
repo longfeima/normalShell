@@ -51,14 +51,14 @@
     
     
     NSArray *testInfo = @[
-                          @{@"title": @"我的及时本",
-                            @"detail": @"记录时刻"},
-                          @{@"title": @"闹钟",
-                            @"detail": @"我的时间"},
-                          @{@"title": @"日历",
-                            @"detail": @"我的日程"},
-                          @{@"title": @"天气",
-                            @"detail": @"我的天气"}
+                          @{@"title": DSLocalizedString(DS_HOME_CELL_NOTES_TITLE),
+                            @"detail": DSLocalizedString(DS_HOME_CELL_NOTES_DETAIL)},
+                          @{@"title": DSLocalizedString(DS_HOME_CELL_CLOCK_TITLE),
+                            @"detail": DSLocalizedString(DS_HOME_CELL_CLOCK_DETAIL)},
+                          @{@"title": DSLocalizedString(DS_HOME_CELL_CALENDAR_TITLE),
+                            @"detail": DSLocalizedString(DS_HOME_CELL_CALENDAR_DETAIL)},
+                          @{@"title": DSLocalizedString(DS_HOME_CELL_WEATHER_TITLE),
+                            @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL)}
                           ];
     self.functinoCollectionView = [[DDCustomCollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame) + 10, DS_APP_SIZE_WIDTH, testInfo.count * 100) AndItemIndetifications:@[@"DsHomeViewFunctionCell"]];
     [self.bgScrollView addSubview:self.functinoCollectionView];

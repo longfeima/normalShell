@@ -11,7 +11,34 @@
 /**首页*/
 //NSString * DS_HOME_TITLE = @"DS_HOME_TITLE";
 //======================home=================================
-#define     DS_HOME_TITLE    @"DS_HOME_TITLE"
+#define     DS_HOME_TITLE                         @"DS_HOME_TITLE"
+
+#define     DS_HOME_CELL_NOTES_TITLE              @"DS_HOME_CELL_NOTES_TITLE"
+#define     DS_HOME_CELL_NOTES_DETAIL             @"DS_HOME_CELL_NOTES_DETAIL"
+
+#define     DS_HOME_CELL_CLOCK_TITLE              @"DS_HOME_CELL_CLOCK_TITLE"
+#define     DS_HOME_CELL_CLOCK_DETAIL             @"DS_HOME_CELL_CLOCK_DETAIL"
+
+#define     DS_HOME_CELL_CALENDAR_TITLE           @"DS_HOME_CELL_CALENDAR_TITLE"
+#define     DS_HOME_CELL_CALENDAR_DETAIL          @"DS_HOME_CELL_CALENDAR_DETAIL"
+
+#define     DS_HOME_CELL_WEATHER_TITLE             @"DS_HOME_CELL_WEATHER_TITLE"
+#define     DS_HOME_CELL_WEATHER_DETAIL            @"DS_HOME_CELL_WEATHER_DETAIL"
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+#define     DS_HOME_NOTE_TITLE                          @"DS_HOME_NOTE_TITLE"
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+#define     DS_HOME_CLOCK_TITLE                                  @"DS_HOME_CLOCK_TITLE"
+#define     DS_HOME_CLOCK_BTN_CANCEL                             @"DS_HOME_CLOCK_BTN_CANCEL"
+#define     DS_HOME_CLOCK_BTN_CONFIRM                             @"DS_HOME_CLOCK_BTN_CONFIRM"
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+#define     DS_HOME_CALENDAR_TITLE                               @"DS_HOME_CALENDAR_TITLE"
+#define     DS_HOME_CALENDAR_BTN_PREVIEW                           @"DS_HOME_CALENDAR_BTN_PREVIEW"
+#define     DS_HOME_CALENDAR_BTN_NEXT                              @"DS_HOME_CALENDAR_BTN_NEXT"
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+#define     DS_HOME_WEATHER_TITLE                            @"DS_HOME_WEATHER_TITLE"
 
 //======================note=================================
 

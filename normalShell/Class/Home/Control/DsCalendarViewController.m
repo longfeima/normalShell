@@ -30,7 +30,7 @@
 //    [self tableView];
     self.navigationView.navType = DD_NormalType;
     
-    self.navigationView.title = @"日历";
+    self.navigationView.title = DSLocalizedString(DS_HOME_CALENDAR_TITLE);
 //    LTSCalendarWeekDayView *dayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, self.view.frame.size.width, 30)];
 //    [self.view addSubview:dayView];
 //
@@ -53,7 +53,7 @@
 - (void)configNormal{
     UIButton *preBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH/2 - 50, 40)];
     [self.view addSubview:preBtn];
-    [preBtn setTitle:@"上月" forState:UIControlStateNormal];
+    [preBtn setTitle:DSLocalizedString(DS_HOME_CALENDAR_BTN_PREVIEW) forState:UIControlStateNormal];
     [preBtn setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     [preBtn addTarget:self action:@selector(preClick:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -64,7 +64,7 @@
     UIButton *nextBtn = [[UIButton alloc]initWithFrame:CGRectMake(DS_APP_SIZE_WIDTH/2 + 50, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH/2 - 50, 40)];
     [self.view addSubview:nextBtn];
     [nextBtn setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
-    [nextBtn setTitle:@"下月" forState:UIControlStateNormal];
+    [nextBtn setTitle:DSLocalizedString(DS_HOME_CALENDAR_BTN_NEXT) forState:UIControlStateNormal];
     [nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.manager = [LTSCalendarManager new];

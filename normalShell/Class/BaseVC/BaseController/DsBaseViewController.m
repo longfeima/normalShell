@@ -34,7 +34,7 @@
     self.navigationController.navigationBarHidden = YES;
     self.navigationView.titleLb.textColor = [UIColor whiteColor];
     self.navigationView.navType = DD_DefaultType;
-    self.navigationView.title = @"记事本";
+    self.navigationView.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
     
     
     self.gradientLayer = [CAGradientLayer layer];

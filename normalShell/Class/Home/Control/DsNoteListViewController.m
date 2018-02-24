@@ -23,7 +23,7 @@
     [self tableView];
     self.navigationView.navType = DD_NormalType;
     
-    self.navigationView.title = @"记事本";
+    self.navigationView.title = DSLocalizedString(DS_HOME_NOTE_TITLE);
 }
 
 

@@ -11,6 +11,34 @@
 "DS_TAB_MINE" = "我的";
 //======================home=================================
 "DS_HOME_TITLE" = "主页";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "记事本";
+"DS_HOME_CELL_NOTES_DETAIL"  = "点滴记录";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "闹钟";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "提醒";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "日历";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "周期查询";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "天气";
+"DS_HOME_CELL_WEATHER_DETAIL" = "出行必备";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "记事本";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "闹钟";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "取消";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "确定";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "日历";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "上一周期";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "下一周期";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "天气";
+
 //======================note=================================
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "关于我们";

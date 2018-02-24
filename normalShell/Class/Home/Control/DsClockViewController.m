@@ -62,8 +62,8 @@
     [self.cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.confirmBtn setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     
-    [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [self.confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
+    [self.cancelBtn setTitle:DSLocalizedString(DS_HOME_CLOCK_BTN_CANCEL) forState:UIControlStateNormal];
+    [self.confirmBtn setTitle:DSLocalizedString(DS_HOME_CLOCK_BTN_CONFIRM) forState:UIControlStateNormal];
 }
 
 - (void)creatUI{
@@ -187,7 +187,7 @@
     
     self.navigationView.navType = DD_NormalType;
 //    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationView.title = @"闹钟";
+    self.navigationView.title = DSLocalizedString(DS_HOME_CLOCK_TITLE);
     [self creatUI];
     [self configConstraint];
     [self configData];
