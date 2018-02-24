@@ -8,9 +8,159 @@
 
 #import "DsClockViewController.h"
 
+
+
+
+@implementation DsClockView
+
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self == [super initWithFrame:frame]) {
+        self.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.4];
+        [self creatUI];
+        [self configNormal];
+    }
+    return self;
+}
+
+//pickerviewdelegate
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerVie{
+    return 2;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 40;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    if (component == 1) {
+        return self.minuteArray.count;
+    }
+    return self.hoursArray.count;
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (component == 1) {
+        return self.minuteArray[row];
+    }
+    return self.hoursArray[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if (component == 1) {
+        self.minuteStr = self.minuteArray[row];
+    }else{
+        self.hourStr = self.hoursArray[row];
+    }
+   
+    
+}
+
+
+- (void)configNormal{
+    
+    [self.cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.confirmBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [self.confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
+}
+
+- (void)creatUI{
+    
+    [self addSubview:self.cancelBtn];
+    [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.equalTo(self).offset(20);
+        make.width.equalTo(@50);
+        make.height.equalTo(@25);
+    }];
+    
+    [self addSubview:self.confirmBtn];
+    [self.confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.cancelBtn);
+        make.right.equalTo(self).offset(-20);
+        make.height.width.equalTo(self.cancelBtn);
+    }];
+    
+    UILabel *line = [UILabel new];
+    line.backgroundColor = [UIColor blackColor];
+    [self addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.top.equalTo(self.cancelBtn.mas_bottom).offset(5);
+        make.height.equalTo(@0.5);
+    }];
+    
+    [self addSubview:self.picker];
+    [self.picker mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.cancelBtn.mas_bottom).offset(10);
+        make.left.bottom.right.equalTo(self);
+    }];
+    
+    [self.cancelBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.confirmBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+- (void)btnClick:(UIButton *)btn{
+//    NSString *date = [NSString stringWithFormat:@"%@:%@", self.hoursArray[self.picker.]]
+     NSString *date = [NSString stringWithFormat:@"%@:%@", self.hourStr ?: @"00", self.minuteStr ?: @"00"];
+    [btn isEqual:self.cancelBtn] ? self.cancelBlock(date) : self.confirmBlock(date);
+}
+
+
+
+
+
+
+//lazy
+- (UIButton *)cancelBtn{
+    if (!_cancelBtn) {
+        _cancelBtn = [UIButton new];
+    }
+    return _cancelBtn;
+}
+- (UIButton *)confirmBtn{
+    if (!_confirmBtn) {
+        _confirmBtn = [UIButton new];
+    }
+    return _confirmBtn;
+}
+- (UIPickerView *)picker{
+    if (!_picker) {
+        _picker = [UIPickerView new];
+        _picker.delegate = self;
+    }
+    return _picker;
+}
+
+
+
+- (NSMutableArray *)hoursArray{
+    if (!_hoursArray) {
+        _hoursArray = [NSMutableArray new];
+        for (int i = 0; i<24; i++) {
+            [_hoursArray addObject:[NSString stringWithFormat:@"%.2d", i]];
+        }
+    }
+    return _hoursArray;
+}
+
+- (NSMutableArray *)minuteArray{
+    if (!_minuteArray) {
+        _minuteArray = [NSMutableArray new];
+        for (int i = 0; i<60; i++) {
+            [_minuteArray addObject:[NSString stringWithFormat:@"%.2d", i]];
+        }
+    }
+    return _minuteArray;
+}
+
+@end
+
+
+
 #define BASETAG_BTN     221
 #define BASETAG_SWT     999
-
 @interface DsClockViewController ()
 
 @property (nonatomic, strong) UIButton *clockBtn1;
@@ -24,6 +174,9 @@
 
 @property (nonatomic, strong) UIButton *currentClockBtn;
 @property (nonatomic, strong) UISwitch *currentSwitch;
+
+
+@property (nonatomic, strong) DsClockView *clockView;
 
 @end
 
@@ -109,20 +262,40 @@
     [self.clockBtn1 addTarget:self action:@selector(clockBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.clockBtn2 addTarget:self action:@selector(clockBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.clockBtn3 addTarget:self action:@selector(clockBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    __weak DsClockViewController *weakSelf = self;
+    
+    self.clockView.cancelBlock = ^(NSString *date) {
+        [UIView animateWithDuration:0.25 animations:^{
+            weakSelf.clockView.frame = CGRectMake(0, DS_APP_SIZE_HEIGHT, DS_APP_SIZE_WIDTH, 250);
+        }];
+    };
+    
+    self.clockView.confirmBlock = ^(NSString *date) {
+        [weakSelf.currentClockBtn setTitle:date forState:UIControlStateNormal];
+        [UIView animateWithDuration:0.25 animations:^{
+            weakSelf.clockView.frame = CGRectMake(0, DS_APP_SIZE_HEIGHT, DS_APP_SIZE_WIDTH, 250);
+        }];
+    };
+    
 }
 - (void)clockBtnClick:(UIButton*)btn{
-    NSInteger tab = btn.tag =BASETAG_BTN;
-    
-    
+    self.currentClockBtn = btn;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.clockView.frame = CGRectMake(0, DS_APP_SIZE_HEIGHT - 250, DS_APP_SIZE_WIDTH, 250);
+    }];
 }
 
 - (void)switchClick:(UISwitch *)swit{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.clockView.frame = CGRectMake(0, DS_APP_SIZE_HEIGHT, DS_APP_SIZE_WIDTH, 250);
+    }];
     self.currentSwitch = swit;
     NSInteger tag = swit.tag - BASETAG_SWT + BASETAG_BTN;
     UIButton *btn = [self.view viewWithTag:tag];
     btn.enabled = swit.isOn;
     id dataArray = [[DsDatabaseManger shareManager] fetchClocks];
-    NSMutableArray *mutable = [NSMutableArray arrayWithArray:(NSArray *)dataArray];
+    NSMutableArray *mutable = (NSMutableArray *)[dataArray mutableCopy];
     
     NSDictionary *dict = @{
                            @"date": btn.titleLabel.text,
@@ -248,5 +421,14 @@
     }
     return _switch3;
 }
+
+- (DsClockView *)clockView{
+    if (!_clockView) {
+        _clockView = [[DsClockView alloc] initWithFrame:CGRectMake(0, DS_APP_SIZE_HEIGHT, DS_APP_SIZE_WIDTH, 250)];
+        [self.view addSubview:_clockView];
+    }
+    return _clockView;
+}
+
 
 @end
