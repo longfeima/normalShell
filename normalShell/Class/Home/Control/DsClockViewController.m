@@ -16,7 +16,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self == [super initWithFrame:frame]) {
-        self.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.4];
+        self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
         [self creatUI];
         [self configNormal];
     }
@@ -59,8 +59,8 @@
 
 - (void)configNormal{
     
-    [self.cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [self.confirmBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.confirmBtn setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     
     [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [self.confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
@@ -83,7 +83,7 @@
     }];
     
     UILabel *line = [UILabel new];
-    line.backgroundColor = [UIColor blackColor];
+    line.backgroundColor = [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.];
     [self addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -102,7 +102,6 @@
     
 }
 - (void)btnClick:(UIButton *)btn{
-//    NSString *date = [NSString stringWithFormat:@"%@:%@", self.hoursArray[self.picker.]]
      NSString *date = [NSString stringWithFormat:@"%@:%@", self.hourStr ?: @"00", self.minuteStr ?: @"00"];
     [btn isEqual:self.cancelBtn] ? self.cancelBlock(date) : self.confirmBlock(date);
 }
@@ -187,7 +186,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationView.navType = DD_NormalType;
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationView.title = @"闹钟";
     [self creatUI];
     [self configConstraint];
@@ -246,13 +245,13 @@
     [self.view addSubview:self.switch3];
     self.switch3.tag = BASETAG_SWT + 2;
     
-    [self.clockBtn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.clockBtn1 setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     [self.clockBtn1 setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     
-    [self.clockBtn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.clockBtn2 setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     [self.clockBtn2 setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     
-    [self.clockBtn3 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.clockBtn3 setTitleColor:[UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.] forState:UIControlStateNormal];
     [self.clockBtn3 setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     
     [self.switch1 addTarget:self action:@selector(switchClick:) forControlEvents:UIControlEventValueChanged];
@@ -322,7 +321,7 @@
     
     UILabel *line1 = [UILabel new];
     [self.view addSubview:line1];
-    line1.backgroundColor = [UIColor grayColor];
+    line1.backgroundColor = [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.];
     [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.clockBtn1.mas_bottom).offset(10);
         make.left.equalTo(self.view).offset(20);
@@ -344,7 +343,7 @@
     
     UILabel *line2 = [UILabel new];
     [self.view addSubview:line2];
-    line2.backgroundColor = [UIColor grayColor];
+    line2.backgroundColor = [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.];
     [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.clockBtn2.mas_bottom).offset(10);
         make.left.height.width.equalTo(line1);
@@ -364,7 +363,7 @@
     
     UILabel *line3 = [UILabel new];
     [self.view addSubview:line3];
-    line3.backgroundColor = [UIColor grayColor];
+    line3.backgroundColor = [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.];
     [line3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.clockBtn3.mas_bottom).offset(10);
         make.left.height.width.equalTo(line2);
