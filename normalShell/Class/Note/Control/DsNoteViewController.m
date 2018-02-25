@@ -10,6 +10,8 @@
 #import "YSLDraggableCardContainer.h"
 #import "CardView.h"
 #import "DsWeatherViewController1.h"
+#import "UserFeedBackViewController.h"
+#import "DsDetailTextViewController.h"
 #define curViewHeight self.view.frame.size.height - 49 - 64
 #define KRedColor [UIColor redColor]
 #define KBlueColor [UIColor blueColor]
@@ -17,37 +19,46 @@
 @interface DsNoteViewController ()<YSLDraggableCardContainerDelegate,YSLDraggableCardContainerDataSource>
 
 @property (nonatomic, strong) YSLDraggableCardContainer *container;
-@property (nonatomic,strong) UIButton *btn;
+@property (nonatomic,strong) CardView *noDataView;
 @end
 
 @implementation DsNoteViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self initUI];
+    [self.view  bringSubviewToFront:self.noDataView];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
-    [self initUI];
-    [self.view addSubview:self.btn];
+//    self.view.backgroundColor = [UIColor yellowColor];
+    [self initNoDataUI];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteTextClick)];
+    [self.noDataView addGestureRecognizer:tap];
 }
--(UIButton *)btn{
-    if (!_btn) {
-        _btn = [[UIButton  alloc] initWithFrame:CGRectMake(100, self.view.frame.size.height - 300, 200, 200)];
-        [_btn setTitle:@"weather" forState:UIControlStateNormal];
-        _btn.backgroundColor = [UIColor purpleColor];
-        [_btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+- (void)initNoDataUI{
+    if (!_noDataView) {
+        _noDataView = [[CardView alloc] initWithFrame:CGRectMake(10, 10 + DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH - 20, DS_APP_SIZE_WIDTH - 20)];
+        _noDataView.titleLabel.text = @"您还没记录任何事件！";
+        _noDataView.label.text = @"记录您的精彩瞬间吧.....";
+        _noDataView.hidden = YES;
+        _noDataView.backgroundColor = [UIColor whiteColor];
+        _noDataView.userInteractionEnabled = YES;
+        [self.view addSubview:_noDataView];
+        
     }
-    return _btn;
 }
-- (void)click{
-    DsWeatherViewController1 *desweather = [[DsWeatherViewController1 alloc] init];
-    desweather.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:desweather animated:YES];
+- (void)noteTextClick{
+    UserFeedBackViewController *vc = [[UserFeedBackViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark ————— 创建UI界面 —————
 -(void)initUI{
     // 创建 _container
     _container = [[YSLDraggableCardContainer alloc]init];
-    _container.frame = CGRectMake(0, 64, self.view.frame.size.width, curViewHeight);
+    _container.frame = CGRectMake(0, DS_APP_NAV_HEIGHT,DS_APP_SIZE_WIDTH, curViewHeight);
     _container.backgroundColor = [UIColor clearColor];
+    _container.userInteractionEnabled = YES;
     _container.dataSource = self;
     _container.delegate = self;
     //    _container.canDraggableDirection = YSLDraggableDirectionLeft | YSLDraggableDirectionRight | YSLDraggableDirectionUp;
@@ -88,18 +99,29 @@
 }
 - (void)loadData
 {
-    _datas = [NSMutableArray array];
     
-    for (int i = 0; i < 20; i++) {
-        NSDictionary *dict = @{@"image" : [NSString stringWithFormat:@"photo_sample_0%d",i%7 + 1],
-                               @"name" : @"YSLDraggableCardContainer Demo"};
-        [_datas addObject:dict];
+    id dataArray = [[DsDatabaseManger shareManager] fetchNotes];
+    if ([dataArray isKindOfClass:[NSArray class]]) {
+        _datas = [NSMutableArray arrayWithArray:dataArray];
+        _noDataView.hidden = YES;
+    }else{
+        _noDataView.hidden = NO;
     }
+    //    _datas = [NSMutableArray array];
+    
+    //    for (int i = 0; i < 20; i++) {
+    //        NSDictionary *dict = @{@"image" : [NSString stringWithFormat:@"photo_sample_0%d",i%7 + 1],
+    //                               @"name" : @"YSLDraggableCardContainer Demo"};
+    //        [_datas addObject:dict];
+    //    }
 }
 
 #pragma mark -- Selector
 - (void)buttonTap:(UIButton *)button
 {
+    if (_datas.count == 0) {
+        return;
+    }
     if (button.tag == 0) {
         [_container movePositionWithDirection:YSLDraggableDirectionUp isAutomatic:YES];
     }
@@ -138,14 +160,25 @@
     NSDictionary *dict = _datas[index];
     CardView *view = [[CardView alloc]initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 20, self.view.frame.size.width - 20)];
     view.backgroundColor = [UIColor whiteColor];
-    view.imageView.image = [UIImage imageNamed:dict[@"image"]];
-    view.label.text = [NSString stringWithFormat:@"%@  %ld",dict[@"name"],(long)index];
+    //    view.imageView.image = [UIImage imageNamed:dict[@"image"]];
+    //    view.label.text = [NSString stringWithFormat:@"%@  %ld",dict[@"name"],(long)index];
+    
+    //    if (_datas.count == 0) {
+    //        view.titleLabel.text = @"您还没记录任何事件!";
+    //        view.label.text = @"记录您的精彩瞬间吧......";
+    //    }else{
+    view.titleLabel.text = [dict objectForKey:@"title"];
+    view.label.text = [dict objectForKey:@"text"];
+    //    }
     return view;
 }
 
 // 获取view的个数
 - (NSInteger)cardContainerViewNumberOfViewInIndex:(NSInteger)index
 {
+    //    if (_datas.count == 0) {
+    //        return 1;
+    //    }
     return _datas.count;
 }
 
@@ -212,6 +245,16 @@
 // 点击view调用这个
 - (void)cardContainerView:(YSLDraggableCardContainer *)cardContainerView didSelectAtIndex:(NSInteger)index draggableView:(UIView *)draggableView
 {
+    //    if (_datas.count == 0) {
+    //        UserFeedBackViewController *vc = [[UserFeedBackViewController alloc] init];
+    //        vc.hidesBottomBarWhenPushed = YES;
+    //        [self.navigationController pushViewController:vc animated:YES];
+    //    }else{
+    DsDetailTextViewController *vc = [[DsDetailTextViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.dict = _datas[index];
+    [self.navigationController pushViewController:vc animated:YES];
+    //}
     NSLog(@"++ index : %ld",(long)index);
 }
 

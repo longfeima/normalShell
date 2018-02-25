@@ -16,8 +16,8 @@
 #import "DsClockViewController.h"
 #import "DsNoteListViewController.h"
 #import "DsWeatherViewController.h"
-
-
+#import "UserFeedBackViewController.h"
+#import "DsWeatherViewController1.h"
 @interface DsHomeViewController ()
 
 @property (nonatomic, strong) UIScrollView *bgScrollView;
@@ -41,6 +41,7 @@
     
     [super viewWillAppear:animated];
     DS_APP_DELEGATE.rootTab.selectIndex = 0;
+    [self.headerView reloadData];
 }
 
 - (void)creatUI{
@@ -95,14 +96,12 @@
 
 
 - (void)itemsClickAtIndex:(NSInteger)index{
-    
     switch (index) {
         case 0:
         {
-            DsNoteListViewController *vc = [[DsNoteListViewController alloc]init];
+            UserFeedBackViewController *vc = [[UserFeedBackViewController alloc] init];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
-            
         }
             break;
         case 1:
@@ -121,9 +120,9 @@
             break;
         case 3:
         {
-            DsWeatherViewController *vc = [[DsWeatherViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+            DsWeatherViewController1 *desweather = [[DsWeatherViewController1 alloc] init];
+            desweather.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:desweather animated:YES];
         }
             break;
             
@@ -157,8 +156,9 @@
         [self.view addSubview:_bgScrollView];
         [_bgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             //            make.edges.mas_equalTo(self.view);
-            make.top.left.right.equalTo(self.view);
-            make. bottom.equalTo(self.view).offset(-64);
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(self.view).offset(DS_APP_NAV_HEIGHT);
+            make. bottom.equalTo(self.view).offset(-DS_APP_TAB_HEIGHT);
         }];
     }
     return _bgScrollView;

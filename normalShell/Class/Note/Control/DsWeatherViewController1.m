@@ -12,14 +12,14 @@
 #import "WeatherModel.h"
 #import "WeatherView.h"
 #import "CityGroupTableViewController.h"
-
+#import <CoreLocation/CoreLocation.h>
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 
 #define widthPix kScreenWidth/320
 #define heightPix kScreenHeight/568
-@interface DsWeatherViewController1 ()<UINavigationControllerDelegate>
+@interface DsWeatherViewController1 ()<CLLocationManagerDelegate>
 @property (nonatomic, strong) UIImageView  *backgroudView;
 @property (nonatomic, strong) CLLocation *userLocation;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -40,6 +40,7 @@
 //雨天动画
 @property (nonatomic, strong) UIImageView *rainCloudImage;//乌云
 @property (nonatomic, strong) NSArray *jsonArray;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 
 //下雪动画
 
@@ -48,13 +49,13 @@
 @implementation DsWeatherViewController1
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    self.navigationController.delegate = self;
+    //    self.navigationController.delegate = self;
     
     [self.view bringSubviewToFront:self.changeCityBtn];//懒加载，将切换城市按钮拿到最上层
 }
 - (WeatherView *)weatherV {
     if (!_weatherV) {
-        _weatherV = [[WeatherView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _weatherV = [[WeatherView alloc]initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, kScreenWidth, kScreenHeight - DS_APP_NAV_HEIGHT)];
     }
     return _weatherV;
 }
@@ -65,11 +66,11 @@
         _changeCityBtn.frame = CGRectMake(kScreenWidth-44-10, 20, 44, 44);
         _changeCityBtn.imageEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
         [_changeCityBtn setImage:[UIImage imageNamed:@"location_hardware"] forState:UIControlStateNormal];
-//        [self.view addSubview:_changeCityBtn];
-//        self.navigationView.rightBarButtonItem.hidden = NO;
-//         self.navigationView.rightBarButtonItem = _changeCityBtn;
+        //        [self.view addSubview:_changeCityBtn];
+        //        self.navigationView.rightBarButtonItem.hidden = NO;
+        //         self.navigationView.rightBarButtonItem = _changeCityBtn;
         [_changeCityBtn addTarget:self action:@selector(changeCity) forControlEvents:UIControlEventTouchUpInside];
-           }
+    }
     
     return _changeCityBtn;
 }
@@ -77,8 +78,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationView.navType = DD_NormalType;
-//    self.navigationView.rightBarButtonImage = @"location_hardware";
+    self.navigationView.navType = DD_ShareType;
+    self.navigationView.title = @"天气";
+    self.navigationView.rightBarButtonImage = @"location_hardware";
     //创建背景视图
     [self createBackgroundView];
     
@@ -86,16 +88,18 @@
     [self.weatherV.cityBt addTarget:self action:@selector(changeCity) forControlEvents:UIControlEventTouchUpInside];
     
     //获取用户的位置并发送请求
-    [self getLoactionAndSendRequest];
+    //    [self getLoactionAndSendRequest];
+    [self startLocation];
     
 }
-- (void)DDRightBarLabelItemClick{
-    
+- (void)DDRightBarButtonItem{
+    [self changeCity];
 }
-
 - (void)changeCity {
     
     CityGroupTableViewController *cityCtrl = [[CityGroupTableViewController alloc]init];
+    //    cityCtrl.hidesBottomBarWhenPushed = YES;
+    //    [self.navigationController pushViewController:cityCtrl animated:YES];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cityCtrl];
     [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBg3"]
                            forBarPosition:UIBarPositionAny
@@ -118,10 +122,69 @@
 //创建背景视图
 - (void)createBackgroundView {
     self.backgroudView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_normal.jpg"]];
-    _backgroudView.frame = CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT);
+    //    _backgroudView.frame = self.view.bounds;
+    _backgroudView.frame = CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT - DS_APP_NAV_HEIGHT);
     [self.view addSubview:self.backgroudView];
 }
 
+//开始定位
+- (void)startLocation {
+    if ([CLLocationManager locationServicesEnabled]) {
+        //        CLog(@"--------开始定位");
+        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager.delegate = self;
+        //控制定位精度,越高耗电量越
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        // 总是授权
+        [self.locationManager requestAlwaysAuthorization];
+        self.locationManager.distanceFilter = 10.0f;
+        [self.locationManager requestAlwaysAuthorization];
+        [self.locationManager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if ([error code] == kCLErrorDenied) {
+        DDLog(@"访问被拒绝");
+    }
+    if ([error code] == kCLErrorLocationUnknown) {
+        DDLog(@"无法获取位置信息");
+    }
+}
+//定位代理经纬度回调
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *newLocation = locations[0];
+    
+    // 获取当前所在的城市名
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    //根据经纬度反向地理编译出地址信息
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *array, NSError *error){
+        if (array.count > 0){
+            CLPlacemark *placemark = [array objectAtIndex:0];
+            
+            //获取城市
+            NSString *city = placemark.locality;
+            if (!city) {
+                //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                city = placemark.administrativeArea;
+            }
+            NSLog(@"city = %@", city);
+            
+            [self sendRequestToServer:city];
+        }
+        else if (error == nil && [array count] == 0)
+        {
+            NSLog(@"No results were returned.");
+        }
+        else if (error != nil)
+        {
+            NSLog(@"An error occurred = %@", error);
+        }
+    }];
+    //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
+    [manager stopUpdatingLocation];
+    
+}
 
 - (void)getLoactionAndSendRequest
 {
@@ -482,3 +545,4 @@
 
 
 @end
+

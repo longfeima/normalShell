@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CityGroup.h"
-
+#import "DsBaseViewController.h"
 typedef void(^MyBlock)(NSString *cityName);
 
 @interface CityGroupTableViewController : UITableViewController

@@ -12,4 +12,6 @@
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSArray <NSString *> *describeSource;
 @property (nonatomic, strong) NSString *centerTitle;
+@property (nonatomic,strong)NSDictionary *dict;
+- (void)reloadData;
 @end

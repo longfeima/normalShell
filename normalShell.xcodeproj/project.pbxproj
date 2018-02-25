@@ -384,6 +384,10 @@
 		14DFF2AA203EB17C00583046 /* sShowTisWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DFF293203EB17C00583046 /* sShowTisWindow.m */; };
 		14DFF2AB203EB17C00583046 /* sTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DFF295203EB17C00583046 /* sTipsView.m */; };
 		14DFF2B1203EC08400583046 /* DsNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DFF2B0203EC08400583046 /* DsNoteViewController.m */; };
+		B7474AB52042B5B7003FAB93 /* DsDetailTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7474AB42042B5B7003FAB93 /* DsDetailTextViewController.m */; };
+		B7474ABA2042B6A5003FAB93 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7474AB72042B6A4003FAB93 /* PlaceholderTextView.m */; };
+		B7474ABB2042B6A5003FAB93 /* UserFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7474AB82042B6A4003FAB93 /* UserFeedBackViewController.m */; };
+		B7474AC42042B807003FAB93 /* UIView+KFGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7474AC22042B807003FAB93 /* UIView+KFGetController.m */; };
 		CD031E628A333BAE8031B167 /* libPods-normalShell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 978B1BC8F6CD741C67E95E9B /* libPods-normalShell.a */; };
 /* End PBXBuildFile section */
 
@@ -1022,6 +1026,14 @@
 		14DFF2B0203EC08400583046 /* DsNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DsNoteViewController.m; sourceTree = "<group>"; };
 		978B1BC8F6CD741C67E95E9B /* libPods-normalShell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-normalShell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A780D2504F8DAFF7274EA6D5 /* Pods-normalShell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-normalShell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-normalShell/Pods-normalShell.debug.xcconfig"; sourceTree = "<group>"; };
+		B7474AB32042B5B6003FAB93 /* DsDetailTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsDetailTextViewController.h; sourceTree = "<group>"; };
+		B7474AB42042B5B7003FAB93 /* DsDetailTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsDetailTextViewController.m; sourceTree = "<group>"; };
+		B7474AB62042B6A4003FAB93 /* UserFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFeedBackViewController.h; sourceTree = "<group>"; };
+		B7474AB72042B6A4003FAB93 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		B7474AB82042B6A4003FAB93 /* UserFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFeedBackViewController.m; sourceTree = "<group>"; };
+		B7474AB92042B6A5003FAB93 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		B7474AC22042B807003FAB93 /* UIView+KFGetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KFGetController.m"; sourceTree = "<group>"; };
+		B7474AC32042B807003FAB93 /* UIView+KFGetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KFGetController.h"; sourceTree = "<group>"; };
 		EA47BDFB3EA35D627ADA5FBA /* Pods-normalShell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-normalShell.release.xcconfig"; path = "Pods/Target Support Files/Pods-normalShell/Pods-normalShell.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2003,6 +2015,10 @@
 		144714AE203E95F7000211AC /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				B7474AB92042B6A5003FAB93 /* PlaceholderTextView.h */,
+				B7474AB72042B6A4003FAB93 /* PlaceholderTextView.m */,
+				B7474AB62042B6A4003FAB93 /* UserFeedBackViewController.h */,
+				B7474AB82042B6A4003FAB93 /* UserFeedBackViewController.m */,
 				14DFF26E203EAECE00583046 /* DsHomeViewController.h */,
 				14DFF26F203EAECE00583046 /* DsHomeViewController.m */,
 				144610AD2040660A00C6492D /* DsCalendarViewController.h */,
@@ -2127,6 +2143,8 @@
 			isa = PBXGroup;
 			children = (
 				14DFF25E203EA6A400583046 /* NSData+DDSC.h */,
+				B7474AC32042B807003FAB93 /* UIView+KFGetController.h */,
+				B7474AC22042B807003FAB93 /* UIView+KFGetController.m */,
 				14DFF257203EA6A300583046 /* NSData+DDSC.m */,
 				14DFF261203EA6A500583046 /* NSString+DDSC.h */,
 				14DFF258203EA6A300583046 /* NSString+DDSC.m */,
@@ -2261,6 +2279,8 @@
 		14DFF2AD203EC05600583046 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				B7474AB32042B5B6003FAB93 /* DsDetailTextViewController.h */,
+				B7474AB42042B5B7003FAB93 /* DsDetailTextViewController.m */,
 				14461B2320417DEE00C6492D /* DsWeatherViewController1.h */,
 				14461B2420417DEE00C6492D /* DsWeatherViewController1.m */,
 				14DFF2AF203EC08400583046 /* DsNoteViewController.h */,
@@ -2600,9 +2620,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-normalShell/Pods-normalShell-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TOWebViewController/TOWebViewControllerLocalizable.bundle",
+				"${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2640,6 +2667,7 @@
 				144619E120417D8B00C6492D /* CPMultiRowTextScrollView.m in Sources */,
 				144610DB204131F900C6492D /* LTSCalendarDayItem.m in Sources */,
 				14461A2C20417D8B00C6492D /* CPRechargeAlipayToBankVC.m in Sources */,
+				B7474AC42042B807003FAB93 /* UIView+KFGetController.m in Sources */,
 				144619F320417D8B00C6492D /* CPLotteryResultMainCellStyle2.m in Sources */,
 				14461A3420417D8B00C6492D /* CPRechargeMainViewController.m in Sources */,
 				14DFF268203EA6A500583046 /* UIControl+FCAcceptEventInteravl.m in Sources */,
@@ -2687,6 +2715,7 @@
 				14461A2520417D8B00C6492D /* CPWithdrawRecordVC.m in Sources */,
 				144619D020417D8B00C6492D /* CPBuyLotterySectionView.m in Sources */,
 				14461A4820417D8B00C6492D /* CPRechargeNetBankCell.m in Sources */,
+				B7474ABA2042B6A5003FAB93 /* PlaceholderTextView.m in Sources */,
 				14DFF252203EA69900583046 /* DsUtils.m in Sources */,
 				14461A3820417D8B00C6492D /* CPRechargeRightMenuView.m in Sources */,
 				14DFF2A6203EB17C00583046 /* sKeyboardView.m in Sources */,
@@ -2704,6 +2733,7 @@
 				14DFF2AA203EB17C00583046 /* sShowTisWindow.m in Sources */,
 				144610B82040671700C6492D /* DsNoteListViewController.m in Sources */,
 				14461A1120417D8B00C6492D /* CPModifyQAMessageVC.m in Sources */,
+				B7474AB52042B5B7003FAB93 /* DsDetailTextViewController.m in Sources */,
 				14DFF2AB203EB17C00583046 /* sTipsView.m in Sources */,
 				14DFF267203EA6A500583046 /* NSString+DDSC.m in Sources */,
 				1446198620417D8B00C6492D /* CPLocalCodeLabel.m in Sources */,
@@ -2713,6 +2743,7 @@
 				14461ABC20417DDD00C6492D /* CityGroup.m in Sources */,
 				144619C520417D8B00C6492D /* CPBuyLotteryRoomVC.m in Sources */,
 				144619E620417D8B00C6492D /* CPRegistViewController.m in Sources */,
+				B7474ABB2042B6A5003FAB93 /* UserFeedBackViewController.m in Sources */,
 				14461A3620417D8B00C6492D /* CPRechargeRecordVC.m in Sources */,
 				144610A8204060E500C6492D /* DsHomeHeadView.m in Sources */,
 				14DFF265203EA6A500583046 /* UIView+Frame.m in Sources */,

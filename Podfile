@@ -18,4 +18,5 @@ pod 'UIAlertView+Blocks', '0.9'
 pod 'IQKeyboardManager', '4.0.10'
 pod 'UMengAnalytics', '4.2.4'
 pod 'RTLabel', '1.0.1'
+pod 'Toast', '~> 3.1.0'
 end
