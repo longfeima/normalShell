@@ -35,7 +35,7 @@
     
     [self addSubview:self.headImagV];
     [self addSubview:self.testLb];
-    self.testLb.text = @"正常人类研究中心";
+    self.testLb.text = @"";
     self.testLb.textColor = DS_COLOR_HEXCOLOR(@"bbbbbb");
     self.headImagV.clipsToBounds = YES;
     self.headImagV.layer.cornerRadius = 50;

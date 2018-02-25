@@ -58,10 +58,11 @@
                                                                @"imageUrl": @"guanyuwomen"},
                                                              @{@"title": DSLocalizedString(DS_MINE_VERSION_TITLE),
                                                                @"detail": DSLocalizedString(DS_MINE_VERSION_DETAIL),
-                                                               @"imageUrl": @"dangqianbanben"},
-                                                             @{@"title": DSLocalizedString(DS_MINE_SETTING_TITLE),
-                                                               @"detail": DSLocalizedString(DS_MINE_SETTING_DETAIL),
-                                                               @"imageUrl": @"setting"}
+                                                               @"imageUrl": @"dangqianbanben"}
+//                                                             ,
+//                                                             @{@"title": DSLocalizedString(DS_MINE_SETTING_TITLE),
+//                                                               @"detail": DSLocalizedString(DS_MINE_SETTING_DETAIL),
+//                                                               @"imageUrl": @"setting"}
                                                              ]];
     }
     return _dataSource;

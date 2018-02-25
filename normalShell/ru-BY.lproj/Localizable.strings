@@ -40,6 +40,16 @@
 "DS_HOME_WEATHER_TITLE"  = "погода";
 
 //======================note=================================
+
+"DS_NOTE_NOTES_TITLE"   = "Вы еще ничего не записали";
+"DS_NOTE_NOTES_DETAIL"  = "Начните записывать свои моменты ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Запишите свой драгоценный момент, с этого момента ...";
+
+"DS_NOTE_BTN_SAVE"  = "Сохранить";
+"DS_NOTE_BTN_UP" = "на";
+"DS_NOTE_BTN_DOWN" = "ниже";
+"DS_NOTE_BTN_LEFT"  = "слева";
+"DS_NOTE_BTN_RIGHT" = "право";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "О КОМПАНИИ";
 "DS_MINE_ABOUTUS_DETAIL" = "Шестой сон";

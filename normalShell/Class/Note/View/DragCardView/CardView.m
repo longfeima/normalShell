@@ -61,6 +61,7 @@
     _titleLabel.backgroundColor = [UIColor whiteColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:24];
+    _titleLabel.textColor = DS_COLOR_HEXCOLOR(@"3b3c4f");
     [self addSubview:_titleLabel];
     [_titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);
@@ -68,7 +69,7 @@
         make.width.mas_equalTo(self);
     }];
     _lineView = [[UIView alloc] init];
-    _lineView.backgroundColor = [UIColor grayColor];
+    _lineView.backgroundColor = [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.];
     [self addSubview:_lineView];
     [_lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_titleLabel.mas_bottom).offset(5);
@@ -79,6 +80,7 @@
     _label = [[UILabel alloc]init];
     _label.backgroundColor = [UIColor whiteColor];
     _label.textAlignment = NSTextAlignmentLeft;
+    _label.textColor = DS_COLOR_HEXCOLOR(@"bbbbbb");
 //    _label.frame = CGRectMake(10, self.frame.size.height * 0.8, self.frame.size.width - 20, self.frame.size.height * 0.2);
 //    _label.frame = self.frame;
     _label.numberOfLines = 0;

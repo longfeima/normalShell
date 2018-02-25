@@ -15,7 +15,7 @@
 #define curViewHeight self.view.frame.size.height - 49 - 64
 #define KRedColor [UIColor redColor]
 #define KBlueColor [UIColor blueColor]
-#define CNavBgColor  [UIColor dd_colorWithHexString:@"00AE68"]
+#define CNavBgColor  [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.]
 @interface DsNoteViewController ()<YSLDraggableCardContainerDelegate,YSLDraggableCardContainerDataSource>
 
 @property (nonatomic, strong) YSLDraggableCardContainer *container;
@@ -38,8 +38,8 @@
 - (void)initNoDataUI{
     if (!_noDataView) {
         _noDataView = [[CardView alloc] initWithFrame:CGRectMake(10, 10 + DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH - 20, DS_APP_SIZE_WIDTH - 20)];
-        _noDataView.titleLabel.text = @"您还没记录任何事件！";
-        _noDataView.label.text = @"记录您的精彩瞬间吧.....";
+        _noDataView.titleLabel.text = DSLocalizedString(DS_NOTE_NOTES_TITLE);
+        _noDataView.label.text = DSLocalizedString(DS_NOTE_NOTES_DETAIL);
         _noDataView.hidden = YES;
         _noDataView.backgroundColor = [UIColor whiteColor];
         _noDataView.userInteractionEnabled = YES;
@@ -84,10 +84,10 @@
         [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:button];
         
-        if (i == 0) { [button setTitle:@"Up" forState:UIControlStateNormal]; }
-        if (i == 1) { [button setTitle:@"Down" forState:UIControlStateNormal]; }
-        if (i == 2) { [button setTitle:@"Left" forState:UIControlStateNormal]; }
-        if (i == 3) { [button setTitle:@"Right" forState:UIControlStateNormal]; }
+        if (i == 0) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_UP) forState:UIControlStateNormal]; }
+        if (i == 1) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_DOWN) forState:UIControlStateNormal]; }
+        if (i == 2) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_LEFT) forState:UIControlStateNormal]; }
+        if (i == 3) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_RIGHT) forState:UIControlStateNormal]; }
     }
     
     // 获取数据

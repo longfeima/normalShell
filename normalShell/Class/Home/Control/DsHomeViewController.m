@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = DS_COLOR_HEXCOLOR(@"f1f1f1");
     self.navigationView.title = DSLocalizedString(DS_HOME_TITLE);
     [self creatUI];
     // Do any additional setup after loading the view.
@@ -46,6 +46,7 @@
 
 - (void)creatUI{
     self.bgScrollView.contentSize = CGSizeMake(DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT * 1.2);
+    self.bgScrollView.showsVerticalScrollIndicator = NO;
     self.headerView = [[DsHomeHeadView alloc]initWithFrame:CGRectMake(0, 0, DS_APP_SIZE_WIDTH, 210 * DS_APP_SIZE_SCALE)];
     [self.bgScrollView addSubview:self.headerView];
     
@@ -53,13 +54,18 @@
     
     NSArray *testInfo = @[
                           @{@"title": DSLocalizedString(DS_HOME_CELL_NOTES_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_NOTES_DETAIL)},
+                            @"detail": DSLocalizedString(DS_HOME_CELL_NOTES_DETAIL),
+                            @"imageUrl": @"note"
+                            },
                           @{@"title": DSLocalizedString(DS_HOME_CELL_CLOCK_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_CLOCK_DETAIL)},
+                            @"detail": DSLocalizedString(DS_HOME_CELL_CLOCK_DETAIL),
+                            @"imageUrl": @"clock"},
                           @{@"title": DSLocalizedString(DS_HOME_CELL_CALENDAR_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_CALENDAR_DETAIL)},
+                            @"detail": DSLocalizedString(DS_HOME_CELL_CALENDAR_DETAIL),
+                            @"imageUrl": @"calendar"},
                           @{@"title": DSLocalizedString(DS_HOME_CELL_WEATHER_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL)}
+                            @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL),
+                            @"imageUrl": @"weather"}
                           ];
     self.functinoCollectionView = [[DDCustomCollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame) + 10, DS_APP_SIZE_WIDTH, testInfo.count * 100) AndItemIndetifications:@[@"DsHomeViewFunctionCell"]];
     [self.bgScrollView addSubview:self.functinoCollectionView];

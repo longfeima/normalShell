@@ -82,7 +82,7 @@
         _textView.layer.borderColor = kTextBorderColor.CGColor;
         _textView.layer.borderWidth = 0.5;
         _textView.placeholderColor = RGBCOLOR(0x89, 0x89, 0x89);
-        _textView.placeholder = @"记录你的宝贵瞬间，从现在开始......";
+        _textView.placeholder = DSLocalizedString(DS_NOTE_NOTES_DETAIL1);
     }
 
     return _textView;
@@ -115,7 +115,7 @@
         _sendButton.layer.cornerRadius = 2.0f;
         _sendButton.frame = CGRectMake(40, CGRectGetMaxY(self.textView.frame)+20, self.view.frame.size.width - 80, 40);
         _sendButton.backgroundColor = [self colorWithRGBHex:0x60cdf8];
-        [_sendButton setTitle:@"保存" forState:UIControlStateNormal];
+        [_sendButton setTitle:DSLocalizedString(DS_NOTE_BTN_SAVE) forState:UIControlStateNormal];
         [_sendButton addTarget:self action:@selector(sendFeedBack) forControlEvents:UIControlEventTouchUpInside];
     }
 

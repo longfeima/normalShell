@@ -41,6 +41,17 @@
 "DS_HOME_WEATHER_TITLE"  = "weer";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "Je hebt nog niets opgenomen";
+"DS_NOTE_NOTES_DETAIL"  = "Begin met het opnemen van uw momenten ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Leg uw kostbare moment vast, vanaf nu ...";
+
+"DS_NOTE_BTN_SAVE"  = "Save";
+"DS_NOTE_BTN_UP" = "op";
+"DS_NOTE_BTN_DOWN" = "lager";
+"DS_NOTE_BTN_LEFT"  = "links";
+"DS_NOTE_BTN_RIGHT" = "rechts";
+
+
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "Over ons";
 "DS_MINE_ABOUTUS_DETAIL" = "Zesde droom";

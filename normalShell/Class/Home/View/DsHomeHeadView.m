@@ -71,7 +71,7 @@
         _IsNoNotes = NO;
     }else{
         _IsNoNotes = YES;
-        dict = @{@"title":@"您还没记录任何事件!",@"text":@"开始记录您的精彩瞬间吧......"};
+        dict = @{@"title":DSLocalizedString(DS_NOTE_NOTES_TITLE),@"text":DSLocalizedString(DS_NOTE_NOTES_DETAIL)};
     }
     _carview.titleLabel.text = dict[@"title"];
     _carview.label.text = dict[@"text"];

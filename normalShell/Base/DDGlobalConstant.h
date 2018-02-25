@@ -144,7 +144,7 @@
 #define DS_URL_TEMP                             @"https://www.baidu.com"
 #define DS_LIST_PAGESIZE                        @"10"
 
-#define DS_JUMPTIMELIMITDAY                     0.0001
+#define DS_JUMPTIMELIMITDAY                     01
 
 /**/
 

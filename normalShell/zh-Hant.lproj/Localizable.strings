@@ -42,10 +42,19 @@
 
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "您還沒有記錄任何事情";
+"DS_NOTE_NOTES_DETAIL"  = "開始記錄您的精彩瞬間吧……";
+"DS_NOTE_NOTES_DETAIL1"   = "記錄您的寶貴瞬間，從現在開始……";
+
+"DS_NOTE_BTN_SAVE"  = "保存";
+"DS_NOTE_BTN_UP" = "上";
+"DS_NOTE_BTN_DOWN" = "下";
+"DS_NOTE_BTN_LEFT"  = "左";
+"DS_NOTE_BTN_RIGHT" = "右";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "關於我們";
 "DS_MINE_ABOUTUS_DETAIL" = "第六夢";
-"DS_MINE_VERSION_TITLE" = "當前笨笨";
+"DS_MINE_VERSION_TITLE" = "當前版本";
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "設置";
 "DS_MINE_SETTING_DETAIL" = " ";

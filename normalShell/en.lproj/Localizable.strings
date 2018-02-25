@@ -31,6 +31,7 @@
 "DS_HOME_NOTE_TITLE"  = "Notes";
 
 
+
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Clocks";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "cancel";
@@ -43,6 +44,15 @@
 "DS_HOME_WEATHER_TITLE"  = "Weather";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "You have not recorded anything yet";
+"DS_NOTE_NOTES_DETAIL"  = "Start recording your moments ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Record your precious moment, from now on ...";
+
+"DS_NOTE_BTN_SAVE"  = "SAVE";
+"DS_NOTE_BTN_UP" = "UP";
+"DS_NOTE_BTN_DOWN" = "DOWN";
+"DS_NOTE_BTN_LEFT"  = "LEFT";
+"DS_NOTE_BTN_RIGHT" = "RIGHT";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "about us";
 "DS_MINE_ABOUTUS_DETAIL" = "the six dream";

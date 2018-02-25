@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "날씨";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "아직 아무것도 녹음하지 않았습니다.";
+"DS_NOTE_NOTES_DETAIL"  = "순간 기록 시작 ...";
+"DS_NOTE_NOTES_DETAIL1"   = "지금부터 당신의 소중한 순간을 ... 기록하십시오.";
+
+"DS_NOTE_BTN_SAVE"  = "저장";
+"DS_NOTE_BTN_UP" = "켜기";
+"DS_NOTE_BTN_DOWN" = "다음";
+"DS_NOTE_BTN_LEFT"  = "왼쪽";
+"DS_NOTE_BTN_RIGHT" = "오른쪽";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "회사 소개";
 "DS_MINE_ABOUTUS_DETAIL" = "여섯 번째 꿈";

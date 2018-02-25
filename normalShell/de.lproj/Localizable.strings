@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "Wetter";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "Du hast noch nichts aufgenommen";
+"DS_NOTE_NOTES_DETAIL"  = "Fange an, deine Momente aufzunehmen ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Nimm deinen kostbaren Moment von nun an auf ...";
+
+"DS_NOTE_BTN_SAVE"  = "Speichern";
+"DS_NOTE_BTN_UP" = "An";
+"DS_NOTE_BTN_DOWN" = "Weiter";
+"DS_NOTE_BTN_LEFT"  = "Links";
+"DS_NOTE_BTN_RIGHT" = "Richtig";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "Über uns";
 "DS_MINE_ABOUTUS_DETAIL" = "Sechster Traum";

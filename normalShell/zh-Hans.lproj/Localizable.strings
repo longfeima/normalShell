@@ -40,6 +40,15 @@
 "DS_HOME_WEATHER_TITLE"  = "天气";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "您还没有记录任何事情";
+"DS_NOTE_NOTES_DETAIL"  = "开始记录您的精彩瞬间吧……";
+"DS_NOTE_NOTES_DETAIL1"   = "记录您的宝贵瞬间，从现在开始……";
+
+"DS_NOTE_BTN_SAVE"  = "保存";
+"DS_NOTE_BTN_UP" = "上";
+"DS_NOTE_BTN_DOWN" = "下";
+"DS_NOTE_BTN_LEFT"  = "左";
+"DS_NOTE_BTN_RIGHT" = "右";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "关于我们";
 "DS_MINE_ABOUTUS_DETAIL" = "第六梦";

@@ -42,6 +42,18 @@
 
 //======================note=================================
 
+#define DS_NOTE_NOTES_TITLE           @"DS_NOTE_NOTES_TITLE"
+#define DS_NOTE_NOTES_DETAIL          @"DS_NOTE_NOTES_DETAIL"
+
+#define DS_NOTE_NOTES_DETAIL1           @"DS_NOTE_NOTES_DETAIL1"
+
+#define DS_NOTE_BTN_SAVE              @"DS_NOTE_BTN_SAVE"
+
+#define DS_NOTE_BTN_UP           @"DS_NOTE_BTN_UP"
+#define DS_NOTE_BTN_DOWN          @"DS_NOTE_BTN_DOWN"
+#define DS_NOTE_BTN_LEFT           @"DS_NOTE_BTN_LEFT"
+#define DS_NOTE_BTN_RIGHT          @"DS_NOTE_BTN_RIGHT"
+
 //======================mine=================================
 
 #define DS_MINE_ABOUTUS_TITLE           @"DS_MINE_ABOUTUS_TITLE"

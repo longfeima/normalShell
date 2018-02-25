@@ -74,7 +74,7 @@
     }];
     
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.headImageV.mas_right).offset(10);
+        make.left.equalTo(self.headImageV.mas_right).offset(20);
         make.bottom.equalTo(self.bgImageV.mas_centerY).offset(-5);
         make.right.equalTo(self.bgImageV).offset(-10);
     }];

@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "Clima";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "Aún no has registrado nada";
+"DS_NOTE_NOTES_DETAIL"  = "Comienza a grabar tus momentos ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Grabe su momento precioso, a partir de ahora ...";
+
+"DS_NOTE_BTN_SAVE"  = "Guardar";
+"DS_NOTE_BTN_UP" = "En";
+"DS_NOTE_BTN_DOWN" = "Siguiente";
+"DS_NOTE_BTN_LEFT"  = "Izquierda";
+"DS_NOTE_BTN_RIGHT" = "Derecha";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "Sobre nosotros";
 "DS_MINE_ABOUTUS_DETAIL" = "Sexto sueño";

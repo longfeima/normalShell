@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "حالة الطقس";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "لم تسجل أي شيء بعد";
+"DS_NOTE_NOTES_DETAIL"  = "بدء تسجيل لحظاتك ...";
+"DS_NOTE_NOTES_DETAIL1"   = "سجل اللحظة الثمينة، من الآن فصاعدا ...";
+
+"DS_NOTE_BTN_SAVE"  = "حفظ";
+"DS_NOTE_BTN_UP" = "في";
+"DS_NOTE_BTN_DOWN" = "أدنى";
+"DS_NOTE_BTN_LEFT"  = "اليسار";
+"DS_NOTE_BTN_RIGHT" = "حق";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "من نحن";
 "DS_MINE_ABOUTUS_DETAIL" = "الحلم السادس";

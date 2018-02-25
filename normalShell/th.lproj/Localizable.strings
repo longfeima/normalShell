@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "สภาพอากาศ";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "คุณยังไม่ได้บันทึกอะไรเลย";
+"DS_NOTE_NOTES_DETAIL"  = "เริ่มบันทึกช่วงเวลาของคุณ ...";
+"DS_NOTE_NOTES_DETAIL1"   = "จดบันทึกช่วงเวลาล้ำค่าของคุณตั้งแต่บัดนี้ ...";
+
+"DS_NOTE_BTN_SAVE"  = "บันทึก";
+"DS_NOTE_BTN_UP" = "บน";
+"DS_NOTE_BTN_DOWN" = "ลดลง";
+"DS_NOTE_BTN_LEFT"  = "ซ้าย";
+"DS_NOTE_BTN_RIGHT" = "ขวา";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "เกี่ยวกับเรา";
 "DS_MINE_ABOUTUS_DETAIL" = "ความฝันที่หก";

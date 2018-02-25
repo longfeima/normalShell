@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "tempo";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "Non hai ancora registrato nulla";
+"DS_NOTE_NOTES_DETAIL"  = "Inizia a registrare i tuoi momenti ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Registra il tuo prezioso momento, d'ora in poi ...";
+
+"DS_NOTE_BTN_SAVE"  = "Salva";
+"DS_NOTE_BTN_UP" = "su";
+"DS_NOTE_BTN_DOWN" = "inferiore";
+"DS_NOTE_BTN_LEFT"  = "sinistra";
+"DS_NOTE_BTN_RIGHT" = "destra";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "Chi siamo";
 "DS_MINE_ABOUTUS_DETAIL" = "Sesto sogno";

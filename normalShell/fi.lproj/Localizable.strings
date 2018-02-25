@@ -41,6 +41,15 @@
 "DS_HOME_WEATHER_TITLE"  = "sää";
 
 //======================note=================================
+"DS_NOTE_NOTES_TITLE"   = "Et ole vielä tallentanut mitään";
+"DS_NOTE_NOTES_DETAIL"  = "Aloita hetkien tallentaminen ...";
+"DS_NOTE_NOTES_DETAIL1"   = "Tallenna arvokas hetki, nyt ...";
+
+"DS_NOTE_BTN_SAVE"  = "Tallenna";
+"DS_NOTE_BTN_UP" = "päälle";
+"DS_NOTE_BTN_DOWN" = "alempi";
+"DS_NOTE_BTN_LEFT"  = "vasen";
+"DS_NOTE_BTN_RIGHT" = "oikea";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "Meistä";
 "DS_MINE_ABOUTUS_DETAIL" = "Kuudes unelma";
