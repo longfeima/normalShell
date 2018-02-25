@@ -10,6 +10,10 @@
 
 @interface DsUtils : NSObject
 
++ (void)saveFirstInstallTime;
+//+ (NSString *)fetchFirstInstallTime;
++ (BOOL) isHaveEnoughTimeToJump;
+
 + (void)write2UserDefaults:(id)value forKey:(NSString *)key;
 + (id)fetchFromUserDefaultsWithKey:(NSString *)key;
 + (void)removeUserDefaultsWithKey:(NSString *)key;

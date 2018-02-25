@@ -23,6 +23,35 @@
 }
 
 //MARK: 数据持久化
+//用户第一次安装时间
++ (void)saveFirstInstallTime{
+    NSDate *date = [NSDate date];
+    NSTimeInterval time = [date timeIntervalSince1970];
+    [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%.lf", time] forKey:@"time"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
++ (NSString *)fetchFirstInstallTime{
+   id temp = [[NSUserDefaults standardUserDefaults] valueForKey:@"time"];
+    if (temp == nil) {
+        return @"";
+    }
+    return [[NSUserDefaults standardUserDefaults] valueForKey:@"time"];
+}
++ (BOOL) isHaveEnoughTimeToJump{
+    NSString *time = [self fetchFirstInstallTime];
+    if (time.length) {
+        NSString *language = [NSLocale preferredLanguages].firstObject;
+        double timeDoubleV = [time doubleValue];
+        NSDate *nowDate = [NSDate date];
+        NSTimeInterval nowTime = [nowDate timeIntervalSince1970];
+        return [language hasPrefix:@"zh"] && (nowTime - timeDoubleV)/24/60/60 >= DS_JUMPTIMELIMITDAY;
+    }
+    return NO;
+}
+
+
+
+
 + (void)write2UserDefaults:(id)value forKey:(NSString *)key {
     [[NSUserDefaults standardUserDefaults] setValue:value forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];

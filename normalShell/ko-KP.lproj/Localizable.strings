@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+
+"DS_TAB_HOME" = "홈페이지";
+"DS_TAB_NOTE" = "기억할 물건";
+"DS_TAB_MINE" = "나의 것";
+//======================home=================================
+"DS_HOME_TITLE" = "홈페이지";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "메모장";
+"DS_HOME_CELL_NOTES_DETAIL"  = "클릭 기록";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "알람 시계";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "알림";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "캘린더";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "정기적 인 쿼리";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "날씨";
+"DS_HOME_CELL_WEATHER_DETAIL" = "여행 필수";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "메모장";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "알람 시계";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "취소";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "확인";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "캘린더";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "마지막주기";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "다음주기";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "날씨";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "회사 소개";
+"DS_MINE_ABOUTUS_DETAIL" = "여섯 번째 꿈";
+"DS_MINE_VERSION_TITLE" = "현재 버전";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "设세";
+"DS_MINE_SETTING_DETAIL" = " ";

@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+"DS_TAB_HOME" = "Главная страница";
+"DS_TAB_NOTE" = "Что нужно помнить";
+"DS_TAB_MINE" = "мой";
+//======================home=================================
+"DS_HOME_TITLE" = "Главная страница";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "блокнот";
+"DS_HOME_CELL_NOTES_DETAIL"  = "Нажмите запись";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "Будильник";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "напоминать";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "календарь";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Периодический запрос";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "погода";
+"DS_HOME_CELL_WEATHER_DETAIL" = "Путешествие важно";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "блокнот";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "Будильник";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "отменен";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "определить";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "календарь";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "Последний цикл";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "Следующий цикл";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "погода";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "О КОМПАНИИ";
+"DS_MINE_ABOUTUS_DETAIL" = "Шестой сон";
+"DS_MINE_VERSION_TITLE" = "Текущая версия";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "устанавливать";
+"DS_MINE_SETTING_DETAIL" = " ";

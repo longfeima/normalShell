@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+
+"DS_TAB_HOME" = "Beginpagina";
+"DS_TAB_NOTE" = "Dingen om te onthouden";
+"DS_TAB_MINE" = "mijn";
+//======================home=================================
+"DS_HOME_TITLE" = "Beginpagina";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "blocnote";
+"DS_HOME_CELL_NOTES_DETAIL"  = "Klik op opnemen";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "Wekker";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "herinneren";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "kalender";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Periodieke zoekopdracht";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "weer";
+"DS_HOME_CELL_WEATHER_DETAIL" = "Reizen essentieel";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "blocnote";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "Wekker";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "geannuleerd";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "bepalen";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "kalender";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "Laatste cyclus";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "Volgende cyclus";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "weer";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "Over ons";
+"DS_MINE_ABOUTUS_DETAIL" = "Zesde droom";
+"DS_MINE_VERSION_TITLE" = "Huidige versie";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "oprichten";
+"DS_MINE_SETTING_DETAIL" = " ";

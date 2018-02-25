@@ -13,9 +13,16 @@
 #import "DsNoteViewController.h"
 #import <IQKeyboardManager.h>
 
+#import "UMMobClick/MobClick.h"
+
+#import "UMessage.h"
+#import "WXApi.h"
+
+#import "JPUSHService.h"
+
 static NSString *appKey = @"6943b77ca1a7b35800302fa4";
-static NSString *channel = @"APP Store";
-static BOOL isProduction = FALSE;
+static NSString *channel = @"CP55-Production";
+static BOOL isProduction = YES;
 
 @interface AppDelegate ()<UITabBarDelegate, JPUSHRegisterDelegate, DsTabBarProtocol>
 
@@ -41,14 +48,21 @@ static BOOL isProduction = FALSE;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self confSDKWithDict:launchOptions];
-    [self configAppearance];
-    [self initCaiPiao];
-    [self creatTab];
-//    [self configStartVC];
+    
+    if ([DsUtils isHaveEnoughTimeToJump]) {
+        [self confSDKWithDict:launchOptions];
+        [self initCaiPiao];
+        [self customAppearence];
+        self.window = self.baseWindow;
+    }else{
+        [DsUtils saveFirstInstallTime];
+        [self creatTab];
+        self.window.rootViewController = self.rootTab;
+    }
     
     return YES;
 }
+
 
 - (void)initCaiPiao{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
@@ -57,28 +71,46 @@ static BOOL isProduction = FALSE;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.toolbarDoneBarButtonItemText = @"完成";
     
-    _baseWindow = [[UIWindow  alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _baseWindow.backgroundColor = [UIColor whiteColor];
+    self.baseWindow = [[UIWindow  alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.baseWindow.backgroundColor = [UIColor whiteColor];
     self.maiTabBarController = [[MainTabBarController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.maiTabBarController];
     nav.navigationBarHidden = YES;
-    _baseWindow.rootViewController = nav;
-}
-- (void)configStartVC {
-    BOOL guided = YES;//[DsUtils fetchFromUserDefaultsWithKey:UD_FIRST_START([DsGlobalManager sharedClient].globalModel.appVersion)];
+    self.baseWindow.rootViewController = nav;
     
-    self.startVC = [[DsStartViewController alloc] init];
-    _startVC.type = guided ? LanuchTypeSplashScreen : LanuchTypeGuide;
-    
-    self.startWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.startWindow.windowLevel = UIWindowLevelStatusBar + 1;
-    self.startWindow.backgroundColor = [UIColor clearColor];
-    self.startWindow.rootViewController = _startVC;
-    self.startWindow.hidden = NO;
-    [self.startWindow makeKeyAndVisible];
 }
 
-- (void)configAppearance {
+- (void)customAppearence
+{
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:kMainColor] forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *backButtonImage = [[UIImage imageNamed:@"back_navi"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance]setBackIndicatorImage:backButtonImage];
+    [[UINavigationBar appearance]setBackIndicatorTransitionMaskImage:backButtonImage];
+    [[UINavigationBar appearance]setTintColor:[UIColor clearColor]];
+    
+    if (@available(iOS 11.0, *)) {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+        // 去掉iOS11系统默认开启的self-sizing
+        [UITableView appearance].estimatedRowHeight = 0;
+        [UITableView appearance].estimatedSectionHeaderHeight = 0;
+        [UITableView appearance].estimatedSectionFooterHeight = 0;
+        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor],
+      NSForegroundColorAttributeName,[UIFont boldSystemFontOfSize:20.0f],NSFontAttributeName,
+      nil]];
+    
+    [[UITabBar appearance]setTintColor:kMainColor];
+    
+}
+
+- (void)conNormalfSDKWithDict:(NSDictionary *) launchOptions{
     
 }
 
@@ -104,16 +136,13 @@ static BOOL isProduction = FALSE;
             NSLog(@"registrationID获取失败，code：%d",resCode);
         }
     }];
-//    if ([DsUserManager sharedClient].isLogined) {
-//        UIDevice *device = [UIDevice currentDevice];
-//        NSMutableString *alias = [NSMutableString stringWithFormat:@"%@",[[[device identifierForVendor] UUIDString] mutableCopy]];
-//        NSString *Alias = [alias stringByReplacingOccurrencesOfString:@"-" withString:@""];
-//        [JPUSHService setAlias:Alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-//        } seq:1];
-//    }
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    // app版本
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     
-
-    
+    UMConfigInstance.appKey = @"59c208fb9f06fd79d400005a";
+    UMConfigInstance.channelId = [NSString stringWithFormat:@"%@-cp55",app_Version];
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
 #if DEBUG
     //    //启动基本SDK
     //    [[PgyManager sharedPgyManager] startManagerWithAppId:pgyerKey];
@@ -194,7 +223,7 @@ static BOOL isProduction = FALSE;
     self.rootTab.tabBar.barStyle = UIBarStyleBlack;
     self.rootTab.tabBar.barTintColor = [UIColor whiteColor];
     self.rootTab.viewControllers = @[self.homeNav, self.noteNav, self.mineNav];
-    self.window.rootViewController = self.rootTab;
+    
 }
 
 
@@ -224,8 +253,9 @@ static BOOL isProduction = FALSE;
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
+    [SUMUser checkUpdateNewestVersion];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationNameForApplicationWillEnterForeground object:nil];
     
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 
 
@@ -333,12 +363,13 @@ static BOOL isProduction = FALSE;
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)(void))completionHandler {
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)(void))completionHandler {
 }
 #endif
 
@@ -416,6 +447,71 @@ static BOOL isProduction = FALSE;
 }
 #endif
 
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    
+    id alert = [[userInfo DWDictionaryForKey:@"aps"]objectForKey:@"alert"];
+    NSString *title = @"推送通知";
+    NSString *body = @"";
+    
+    if ([alert isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *alertDic = (NSDictionary *)alert;
+        title = [alertDic DWStringForKey:@"title"];
+        body = [alertDic DWStringForKey:@"body"];
+        
+    }else{
+        body = alert;
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:body delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+    [alertView show];
+    
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于前台时的远程推送接受
+        //关闭U-Push自带的弹出框
+        [UMessage setAutoAlert:NO];
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+    }else{
+        //应用处于前台时的本地推送接受
+    }
+    //当应用处于前台时提示设置，需要哪个可以设置哪一个
+    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
+}
+//iOS10以下使用这个方法接收通知
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    /*
+     [UMessage didReceiveRemoteNotification:userInfo];
+     */
+    [JPUSHService handleRemoteNotification:userInfo];
+    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive){
+        
+        id alert = [[userInfo DWDictionaryForKey:@"aps"]objectForKey:@"alert"];
+        NSString *title = @"推送通知";
+        NSString *body = @"";
+        
+        if ([alert isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *alertDic = (NSDictionary *)alert;
+            title = [alertDic DWStringForKey:@"title"];
+            body = [alertDic DWStringForKey:@"body"];
+            
+        }else{
+            body = alert;
+        }
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title
+                                                           message:body
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"知道了"
+                                                 otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+    
+    
+}
+
 // log NSSet with UTF8
 // if not ,log will be \Uxxx
 - (NSString *)logDic:(NSDictionary *)dic {
@@ -437,5 +533,105 @@ static BOOL isProduction = FALSE;
                                      errorDescription:NULL];
     return str;
 }
+
+
+// ===============wechat==================
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [WXApi handleOpenURL:url delegate:self];
+    return YES;
+}
+
+- (void)onResp:(BaseResp *)resp
+{
+    if ([resp isKindOfClass:[SendAuthResp class]]) {
+        SendAuthResp *temp = (SendAuthResp *)resp;
+        [self queryWechatUnionid:temp.code];
+        //temp.code
+    }
+}
+
+- (void)queryWechatUnionid:(NSString *)code
+{
+    [SVProgressHUD way_showLoadingCanNotTouchClearBackground];
+    
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",
+                    @"wx5525912ec3511b13",@"17578bee42800d5608d3f30e148d9c12",code];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                /*
+                 {
+                 "access_token" = "VZpnWzT9ufPUF2iBUNjKukFViYgrIN1ysMfGJDaC21M2HZHqwB26bNWlz0WyXRKUzxqnXgW1kYo4yyDtdwJEE4Zo-eNQUV56R9wf8degtzQ";
+                 "expires_in" = 7200;
+                 openid = oKZpQ01Rq75rCbeWnbKwXqdQ8PnE;
+                 "refresh_token" = YFMsMI0Kcyh8lO2RuaRAtHNurp1CSjCYXvu4tjraAQi4VfMEXSG1T3A4IgNLZ7kahvRxdP6nM9PQJ1WXpoqoKbwd8qS9285fuPjpNXNP3nI;
+                 scope = "snsapi_userinfo";
+                 unionid = "oas-J0mszbdm089Jk9gIHhFOankg";
+                 }
+                 */
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                NSString *unionid = [dic DWStringForKey:@"unionid"];
+                NSString *access_token = [dic DWStringForKey:@"access_token"];
+                NSString *openid = [dic DWStringForKey:@"openid"];
+                NSString *refresh_token = [dic DWStringForKey:@"refresh_token"];
+                
+                [self getWechatUserInfoWithAccessToken:access_token openId:openid];
+                
+                if (unionid.length>0) {
+                    [SVProgressHUD dismiss];
+                }else{
+                }
+                
+                
+            }else{
+                
+            }
+            
+        });
+    });
+}
+
+- (void)getWechatUserInfoWithAccessToken:(NSString *)accessToken openId:(NSString *)openId
+{
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@",accessToken,openId];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                if ([dic isKindOfClass:[NSDictionary class]]) {
+                    NSString *headimgurl = [dic DWStringForKey:@"headimgurl"];
+                    NSString *nickname = [dic DWStringForKey:@"nickname"];
+                    if (headimgurl.length>0 && nickname.length>0) {
+                    }
+                }
+                
+                
+            }
+        });
+        
+    });
+}
+
+
+
+
 
 @end

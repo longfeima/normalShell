@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+
+"DS_TAB_HOME" = "ホームページ";
+"DS_TAB_NOTE" = "心の中で物事";
+"DS_TAB_MINE" = "私の";
+//======================home=================================
+"DS_HOME_TITLE" = "ホームページ";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "メモ帳;
+"DS_HOME_CELL_NOTES_DETAIL"  = "レコードをクリック";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "目覚まし時計";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "リマインダ";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "カレンダー";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "定期的なクエリ";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "天気";
+"DS_HOME_CELL_WEATHER_DETAIL" = "旅行必須";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "メモ帳";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "目覚まし時計";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "キャンセル";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "OK";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "カレンダー";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "前回のサイクル";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "次のサイクル";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "天気";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "私たちについて";
+"DS_MINE_ABOUTUS_DETAIL" = "第六の夢";
+"DS_MINE_VERSION_TITLE" = "現在のバージョン";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "セット";
+"DS_MINE_SETTING_DETAIL" = " ";
+

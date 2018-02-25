@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+
+"DS_TAB_HOME" = "Kotisivu";
+"DS_TAB_NOTE" = "Muistettavaa";
+"DS_TAB_MINE" = "minun";
+//======================home=================================
+"DS_HOME_TITLE" = "Kotisivu主页";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "muistilehtiö";
+"DS_HOME_CELL_NOTES_DETAIL"  = "Napsauta tallenna";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "Herätyskello";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "muistuttaa";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "kalenteri";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Määräajoin tehty kysely";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "sää";
+"DS_HOME_CELL_WEATHER_DETAIL" = "Matkailu on välttämätöntä";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "muistilehtiö";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "Herätyskello";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "peruttu";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "määrittää";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "kalenteri日历";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "Viimeinen sykli";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "Seuraava kierros";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "sää";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "Meistä";
+"DS_MINE_ABOUTUS_DETAIL" = "Kuudes unelma";
+"DS_MINE_VERSION_TITLE" = "Nykyinen versio";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "perustettu";
+"DS_MINE_SETTING_DETAIL" = " ";

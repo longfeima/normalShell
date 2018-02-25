@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  normalShell
+
+  Created by Seven on 2018/2/23.
+  Copyright © 2018年 Seven. All rights reserved.
+*/
+
+
+"DS_TAB_HOME" = "Pagina iniziale";
+"DS_TAB_NOTE" = "Cose da ricordare";
+"DS_TAB_MINE" = "il mio";
+//======================home=================================
+"DS_HOME_TITLE" = "Pagina iniziale";
+
+"DS_HOME_CELL_NOTES_TITLE"   = "Notepad";
+"DS_HOME_CELL_NOTES_DETAIL"  = "Fare clic su record";
+
+"DS_HOME_CELL_CLOCK_TITLE"   = "Sveglia";
+"DS_HOME_CELL_CLOCK_DETAIL"  = "ricordare";
+
+"DS_HOME_CELL_CALENDAR_TITLE" = "calendario";
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Query periodica";
+
+"DS_HOME_CELL_WEATHER_TITLE"  = "tempo";
+"DS_HOME_CELL_WEATHER_DETAIL" = "Viaggio essenziale";
+
+///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
+"DS_HOME_NOTE_TITLE"  = "Notepad";
+
+
+///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
+"DS_HOME_CLOCK_TITLE"  = "Sveglia";
+"DS_HOME_CLOCK_BTN_CANCEL"  = "annullato";
+"DS_HOME_CLOCK_BTN_CONFIRM"  = "determinare";
+///++++++++++++++++++++homeSubCalendar+++++++++++++++++++++++++++++++++
+"DS_HOME_CALENDAR_TITLE"  = "calendario";
+"DS_HOME_CALENDAR_BTN_PREVIEW"  = "Ultimo ciclo";
+"DS_HOME_CALENDAR_BTN_NEXT"  = "Prossimo ciclo";
+///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
+"DS_HOME_WEATHER_TITLE"  = "tempo";
+
+//======================note=================================
+//======================mine=================================
+"DS_MINE_ABOUTUS_TITLE" = "Chi siamo";
+"DS_MINE_ABOUTUS_DETAIL" = "Sesto sogno";
+"DS_MINE_VERSION_TITLE" = "Versione corrente";
+"DS_MINE_VERSION_DETAIL" = "1.0.0";
+"DS_MINE_SETTING_TITLE" = "mpostare";
+"DS_MINE_SETTING_DETAIL" = " ";
