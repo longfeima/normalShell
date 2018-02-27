@@ -70,4 +70,22 @@
 #define     DS_TAB_NOTE     @"DS_TAB_NOTE"
 #define     DS_TAB_MINE     @"DS_TAB_MINE"
 
+#define     DS_MON_1        @"DS_MON_1"
+#define     DS_MON_2        @"DS_MON_2"
+#define     DS_MON_3        @"DS_MON_3"
+#define     DS_MON_4        @"DS_MON_4"
+#define     DS_MON_5        @"DS_MON_5"
+#define     DS_MON_6        @"DS_MON_6"
+#define     DS_MON_7        @"DS_MON_7"
+#define     DS_MON_8        @"DS_MON_8"
+#define     DS_MON_9        @"DS_MON_9"
+#define     DS_MON_10        @"DS_MON_10"
+#define     DS_MON_11        @"DS_MON_11"
+#define     DS_MON_12        @"DS_MON_12"
+
+
+#define     DS_MINE_CAMERA   @"DS_MINE_CAMERA"
+#define     DS_MINE_PHOTOS   @"DS_MINE_PHOTOS"
+
+
 #endif /* DsLanguageConfig_h */

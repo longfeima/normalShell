@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "Startseite";
 "DS_TAB_NOTE" = "Dinge zu erinnern";
 "DS_TAB_MINE" = "Meins";
 //======================home=================================
 "DS_HOME_TITLE" = "Startseite";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Notizblock";
 "DS_HOME_CELL_NOTES_DETAIL"  = "Klicken Sie auf Datensatz";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Wecker";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "Erinnerung";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "Kalender";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "Periodische Abfrage";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "Wetter";
 "DS_HOME_CELL_WEATHER_DETAIL" = "Reise unerlässlich";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Notizblock";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Wecker";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "Abbrechen";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "Nächster Zyklus";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "Wetter";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "Du hast noch nichts aufgenommen";
 "DS_NOTE_NOTES_DETAIL"  = "Fange an, deine Momente aufzunehmen ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Nimm deinen kostbaren Moment von nun an auf ...";
-
 "DS_NOTE_BTN_SAVE"  = "Speichern";
 "DS_NOTE_BTN_UP" = "An";
 "DS_NOTE_BTN_DOWN" = "Weiter";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "Aktuelle Version";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "Januar";
+"DS_MON_2" = "Februar";
+"DS_MON_3" = "März";
+"DS_MON_4" = "April";
+"DS_MON_5" = "Mai";
+"DS_MON_6" = "Juni";
+"DS_MON_7" = "Juli";
+"DS_MON_8" = "August";
+"DS_MON_9" = "September";
+"DS_MON_10" = "Oktober";
+"DS_MON_11" = "November";
+"DS_MON_12" = "Dezember";
+"DS_MINE_CAMERA" = "Kamera";
+"DS_MINE_PHOTOS" = "Album";

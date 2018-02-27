@@ -7,29 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "Maison";
 "DS_TAB_NOTE" = "Retenir";
 "DS_TAB_MINE" = "Mine";
 //======================home=================================
 "DS_HOME_TITLE" = "Page d'accueil";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Bloc-notes";
 "DS_HOME_CELL_NOTES_DETAIL"  = "Cliquez sur enregistrement";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Réveil";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "Rappel";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "Calendrier";
-"DS_HOME_CELL_CALENDAR_DETAIL" = "Requête périodique
-";
-
+"DS_HOME_CELL_CALENDAR_DETAIL" = "Requête périodique";
 "DS_HOME_CELL_WEATHER_TITLE"  = "Météo";
 "DS_HOME_CELL_WEATHER_DETAIL" = "Voyage essentiel";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Bloc-notes";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Réveil";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "Annuler";
@@ -40,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "Cycle suivant";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "Météo";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "Vous n'avez encore rien enregistré";
 "DS_NOTE_NOTES_DETAIL"  = "Commencez à enregistrer vos moments ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Enregistrez votre précieux moment, à partir de maintenant ...";
-
 "DS_NOTE_BTN_SAVE"  = "Sauvegarder";
 "DS_NOTE_BTN_UP" = "Sur";
 "DS_NOTE_BTN_DOWN" = "Suivant";
@@ -58,3 +49,19 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "Définir";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "Janvier";
+"DS_MON_2" = "Février";
+"DS_MON_3" = "Mars";
+"DS_MON_4" = "Avril";
+"DS_MON_5" = "Mai";
+"DS_MON_6" = "Juin";
+"DS_MON_7" = "Juillet";
+"DS_MON_8" = "Août";
+"DS_MON_9" = "Septembre";
+"DS_MON_10" = "Octobre";
+"DS_MON_11" = "Novembre";
+"DS_MON_12" = "Décembre";
+
+"DS_MINE_CAMERA" = "Caméra";
+"DS_MINE_PHOTOS" = "Album";

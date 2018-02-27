@@ -51,7 +51,7 @@ static NSArray *cacheDaysOfWeeks;
     }
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    dateFormatter.locale = [NSLocale currentLocale];
     NSMutableArray *days = nil;
     
     switch([LTSCalendarAppearance share].weekDayFormat) {

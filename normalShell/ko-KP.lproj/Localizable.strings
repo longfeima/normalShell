@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "홈페이지";
 "DS_TAB_NOTE" = "기억할 물건";
 "DS_TAB_MINE" = "나의 것";
 //======================home=================================
 "DS_HOME_TITLE" = "홈페이지";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "메모장";
 "DS_HOME_CELL_NOTES_DETAIL"  = "클릭 기록";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "알람 시계";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "알림";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "캘린더";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "정기적 인 쿼리";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "날씨";
 "DS_HOME_CELL_WEATHER_DETAIL" = "여행 필수";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "메모장";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "알람 시계";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "취소";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "다음주기";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "날씨";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "아직 아무것도 녹음하지 않았습니다.";
 "DS_NOTE_NOTES_DETAIL"  = "순간 기록 시작 ...";
 "DS_NOTE_NOTES_DETAIL1"   = "지금부터 당신의 소중한 순간을 ... 기록하십시오.";
-
 "DS_NOTE_BTN_SAVE"  = "저장";
 "DS_NOTE_BTN_UP" = "켜기";
 "DS_NOTE_BTN_DOWN" = "다음";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "设세";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "1 월";
+"DS_MON_2" = "2 월";
+"DS_MON_3" = "3 월";
+"DS_MON_4" = "4 월";
+"DS_MON_5" = "5 월";
+"DS_MON_6" = "6 월";
+"DS_MON_7" = "7 월";
+"DS_MON_8" = "8 월";
+"DS_MON_9" = "9 월";
+"DS_MON_10" = "10 월";
+"DS_MON_11" = "11 월";
+"DS_MON_12" = "12 월";
+"DS_MINE_CAMERA" = "카메라";
+"DS_MINE_PHOTOS" = "앨범";

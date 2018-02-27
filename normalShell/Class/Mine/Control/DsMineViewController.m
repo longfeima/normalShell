@@ -126,7 +126,7 @@
     self.headeImageV.frame = self.headerView.frame;
     __weak DsMineViewController *weakSelf = self;
     self.headerView.moreHeadeClickBlock = ^(NSInteger index){
-        [[sShowTisWindow shareTipsWindow] showSheetWithObject:@[@"相机拍摄",@"本地图库"] Title:@"选择图片" Delegate:weakSelf Type:Ds_Sheet_Default];
+        [[sShowTisWindow shareTipsWindow] showSheetWithObject:@[DSLocalizedString(DS_MINE_CAMERA),DSLocalizedString(DS_MINE_PHOTOS)] Title:@" " Delegate:weakSelf Type:Ds_Sheet_Default];
         [sShowTisWindow shareTipsWindow].isClickHide = YES;
     };
     [self.headerView addSubview:self.headeImageV];

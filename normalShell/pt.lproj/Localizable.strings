@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "Página inicial";
 "DS_TAB_NOTE" = "Coisas para lembrar";
 "DS_TAB_MINE" = "O meu";
 //======================home=================================
 "DS_HOME_TITLE" = "Página inicial";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Bloco de notas";
 "DS_HOME_CELL_NOTES_DETAIL"  = "Clique na gravação";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Despertador";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "Lembrete";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "Calendário";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "Consulta periódica";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "Tempo";
 "DS_HOME_CELL_WEATHER_DETAIL" = "Viagem essencial";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Bloco de notas";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Despertador";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "Cancelar";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "Próximo ciclo";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "Tempo";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "Você ainda não gravou nada";
 "DS_NOTE_NOTES_DETAIL"  = "Comece a gravar seus momentos ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Registre seu precioso momento, de agora em diante ...";
-
 "DS_NOTE_BTN_SAVE"  = "Salvar";
 "DS_NOTE_BTN_UP" = "Em";
 "DS_NOTE_BTN_DOWN" = "Em seguida";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "Set";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "Janeiro";
+"DS_MON_2" = "Fevereiro";
+"DS_MON_3" = "Março";
+"DS_MON_4" = "Abril";
+"DS_MON_5" = "Maio";
+"DS_MON_6" = "Junho";
+"DS_MON_7" = "Julho";
+"DS_MON_8" = "Agosto";
+"DS_MON_9" = "Setembro";
+"DS_MON_10" = "Outubro";
+"DS_MON_11" = "Novembro";
+"DS_MON_12" = "Dezembro";
+"DS_MINE_CAMERA" = "Câmera";
+"DS_MINE_PHOTOS" = "Álbum";

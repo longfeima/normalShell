@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "หน้าแรก";
 "DS_TAB_NOTE" = "สิ่งที่ต้องจำ";
 "DS_TAB_MINE" = "ของฉัน";
 //======================home=================================
 "DS_HOME_TITLE" = "หน้าแรก";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Notepad";
 "DS_HOME_CELL_NOTES_DETAIL"  = "คลิกบันทึก";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "นาฬิกาปลุก";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "เตือน";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "ปฏิทิน";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "แบบสอบถามเป็นระยะ ๆ";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "สภาพอากาศ";
 "DS_HOME_CELL_WEATHER_DETAIL" = "ท่องเที่ยวที่จำเป็น";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Notepad";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "นาฬิกาปลุก";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "ยกเลิก";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "รอบถัดไป";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "สภาพอากาศ";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "คุณยังไม่ได้บันทึกอะไรเลย";
 "DS_NOTE_NOTES_DETAIL"  = "เริ่มบันทึกช่วงเวลาของคุณ ...";
 "DS_NOTE_NOTES_DETAIL1"   = "จดบันทึกช่วงเวลาล้ำค่าของคุณตั้งแต่บัดนี้ ...";
-
 "DS_NOTE_BTN_SAVE"  = "บันทึก";
 "DS_NOTE_BTN_UP" = "บน";
 "DS_NOTE_BTN_DOWN" = "ลดลง";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "จัดตั้งขึ้น";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "ในเดือนมกราคม";
+"DS_MON_2" = "กุมภาพันธ์";
+"DS_MON_3" = "มีนาคม";
+"DS_MON_4" = "เมษายน";
+"DS_MON_5" = "พฤษภาคม";
+"DS_MON_6" = "มิถุนายน";
+"DS_MON_7" = "กรกฎาคม";
+"DS_MON_8" = "สิงหาคม";
+"DS_MON_9" = "กันยายน";
+"DS_MON_10" = "ตุลาคม";
+"DS_MON_11" = "พฤศจิกายน";
+"DS_MON_12" = "ธันวาคม";
+"DS_MINE_CAMERA" = "กล้อง";
+"DS_MINE_PHOTOS" = "เฉลียง";

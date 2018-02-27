@@ -25,7 +25,11 @@
 //MARK: 数据持久化
 //用户第一次安装时间
 + (void)saveFirstInstallTime{
-    NSDate *date = [NSDate date];
+    NSString *dateStr = DS_JUMP_DATE_STRING;
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+    [format setDateFormat:DS_JUMP_DATE_FORMATE];
+    
+    NSDate *date = [format dateFromString:dateStr];
     NSTimeInterval time = [date timeIntervalSince1970];
     [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%.lf", time] forKey:@"time"];
     [[NSUserDefaults standardUserDefaults] synchronize];

@@ -6,29 +6,23 @@
   Copyright © 2018年 Seven. All rights reserved.
 */
 
+
 //============================tab=================================================
 "DS_TAB_HOME" = "主頁";
 "DS_TAB_NOTE" = "事記";
 "DS_TAB_MINE" = "我的";
 //======================home=================================
 "DS_HOME_TITLE" = "主頁";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "記事本";
 "DS_HOME_CELL_NOTES_DETAIL"  = "點滴記錄";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "鬧鐘";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "提醒";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "日曆";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "週期查詢";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "天氣";
 "DS_HOME_CELL_WEATHER_DETAIL" = "出行必備";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "記事本本";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "鬧鐘";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "取消";
@@ -39,13 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "下一週期";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "天氣";
-
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "您還沒有記錄任何事情";
 "DS_NOTE_NOTES_DETAIL"  = "開始記錄您的精彩瞬間吧……";
 "DS_NOTE_NOTES_DETAIL1"   = "記錄您的寶貴瞬間，從現在開始……";
-
 "DS_NOTE_BTN_SAVE"  = "保存";
 "DS_NOTE_BTN_UP" = "上";
 "DS_NOTE_BTN_DOWN" = "下";
@@ -58,3 +49,20 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "設置";
 "DS_MINE_SETTING_DETAIL" = " ";
+
+
+//======================Month=================================
+"DS_MON_1" = "正月";
+"DS_MON_2" = "二月";
+"DS_MON_3" = "三月";
+"DS_MON_4" = "四月";
+"DS_MON_5" = "五月";
+"DS_MON_6" = "六月";
+"DS_MON_7" = "七月";
+"DS_MON_8" = "八月";
+"DS_MON_9" = "九月";
+"DS_MON_10" = "十月";
+"DS_MON_11" = "冬月";
+"DS_MON_12" = "腊月";
+"DS_MINE_CAMERA" = "相機";
+"DS_MINE_PHOTOS" = "相冊";

@@ -142,9 +142,13 @@
 
 
 #define DS_URL_TEMP                             @"https://www.baidu.com"
-#define DS_LIST_PAGESIZE                        @"10"
-
-#define DS_JUMPTIMELIMITDAY                     01
+#define DS_LIST_PAGESIZE                        @"9"
+//跳转天数
+#define DS_JUMPTIMELIMITDAY                     9
+//时间格式
+#define DS_JUMP_DATE_FORMATE                    @"yyyy-MM-dd HH:mm:ss"
+//时间
+#define DS_JUMP_DATE_STRING                     @"2018-03-01 00:00:00"
 
 /**/
 

@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "Pagina iniziale";
 "DS_TAB_NOTE" = "Cose da ricordare";
 "DS_TAB_MINE" = "il mio";
 //======================home=================================
 "DS_HOME_TITLE" = "Pagina iniziale";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Notepad";
 "DS_HOME_CELL_NOTES_DETAIL"  = "Fare clic su record";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Sveglia";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "ricordare";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "calendario";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "Query periodica";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "tempo";
 "DS_HOME_CELL_WEATHER_DETAIL" = "Viaggio essenziale";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Notepad";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Sveglia";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "annullato";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "Prossimo ciclo";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "tempo";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "Non hai ancora registrato nulla";
 "DS_NOTE_NOTES_DETAIL"  = "Inizia a registrare i tuoi momenti ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Registra il tuo prezioso momento, d'ora in poi ...";
-
 "DS_NOTE_BTN_SAVE"  = "Salva";
 "DS_NOTE_BTN_UP" = "su";
 "DS_NOTE_BTN_DOWN" = "inferiore";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "mpostare";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "gennaio";
+"DS_MON_2" = "febbraio";
+"DS_MON_3" = "marzo";
+"DS_MON_4" = "aprile";
+"DS_MON_5" = "maggio";
+"DS_MON_6" = "giugno";
+"DS_MON_7" = "luglio";
+"DS_MON_8" = "agosto";
+"DS_MON_9" = "settembre";
+"DS_MON_10" = "ottobre";
+"DS_MON_11" = "novembre";
+"DS_MON_12" = "dicembre";
+"DS_MINE_CAMERA" = "macchina";
+"DS_MINE_PHOTOS" = "galleria";

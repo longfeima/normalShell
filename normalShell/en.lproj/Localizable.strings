@@ -13,25 +13,16 @@
 "DS_TAB_MINE" = "Mine";
 //======================home=================================
 "DS_HOME_TITLE" = "Home";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "Notes";
 "DS_HOME_CELL_NOTES_DETAIL"  = "A diary";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Alarm";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "Remind";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "Calendar";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "Important moment";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "Weather";
 "DS_HOME_CELL_WEATHER_DETAIL" = "The weather forecast";
-
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "Notes";
-
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Clocks";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "cancel";
@@ -42,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "next";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "Weather";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "You have not recorded anything yet";
 "DS_NOTE_NOTES_DETAIL"  = "Start recording your moments ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Record your precious moment, from now on ...";
-
 "DS_NOTE_BTN_SAVE"  = "SAVE";
 "DS_NOTE_BTN_UP" = "UP";
 "DS_NOTE_BTN_DOWN" = "DOWN";
@@ -55,8 +44,25 @@
 "DS_NOTE_BTN_RIGHT" = "RIGHT";
 //======================mine=================================
 "DS_MINE_ABOUTUS_TITLE" = "about us";
-"DS_MINE_ABOUTUS_DETAIL" = "the six dream";
+"DS_MINE_ABOUTUS_DETAIL" = "Seven";
 "DS_MINE_VERSION_TITLE" = "currect version";
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "setting";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "January";
+"DS_MON_2" = "February";
+"DS_MON_3" = "March";
+"DS_MON_4" = "April";
+"DS_MON_5" = "May";
+"DS_MON_6" = "June";
+"DS_MON_7" = "July";
+"DS_MON_8" = "August";
+"DS_MON_9" = "September";
+"DS_MON_10" = "October";
+"DS_MON_11" = "November";
+"DS_MON_12" = "December";
+
+"DS_MINE_CAMERA" = "CAMERA";
+"DS_MINE_PHOTOS" = "PHOTOS";
+

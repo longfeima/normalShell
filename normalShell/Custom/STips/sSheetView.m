@@ -110,7 +110,7 @@ static NSString *titleKey = @"titleKey";
     cancelLb.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.95];
     cancelLb.userInteractionEnabled = YES;
     [cancelLb addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(itemClick:)]];
-    cancelLb.text = @"取消";
+    cancelLb.text = DSLocalizedString(DS_HOME_CLOCK_BTN_CANCEL);
  
 }
 

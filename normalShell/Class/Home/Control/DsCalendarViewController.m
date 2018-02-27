@@ -31,14 +31,7 @@
     self.navigationView.navType = DD_NormalType;
     
     self.navigationView.title = DSLocalizedString(DS_HOME_CALENDAR_TITLE);
-//    LTSCalendarWeekDayView *dayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, self.view.frame.size.width, 30)];
-//    [self.view addSubview:dayView];
-//
-//    LTSCalendarContentView *view = [[LTSCalendarContentView alloc]initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT+30, DS_APP_SIZE_WIDTH, [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay)];
-//    view.currentDate = [NSDate date];
-//    self.automaticallyAdjustsScrollViewInsets = false;
-//    [self.view addSubview:view];
-//    self.calendarView = view;
+
     [self configNormal];
 }
 

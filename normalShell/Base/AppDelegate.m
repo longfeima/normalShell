@@ -48,14 +48,14 @@ static BOOL isProduction = YES;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [DsUtils saveFirstInstallTime];
     if ([DsUtils isHaveEnoughTimeToJump]) {
         [self confSDKWithDict:launchOptions];
         [self initCaiPiao];
         [self customAppearence];
         self.window = self.baseWindow;
     }else{
-        [DsUtils saveFirstInstallTime];
         [self creatTab];
         self.window.rootViewController = self.rootTab;
     }

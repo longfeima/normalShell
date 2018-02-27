@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================
 "DS_TAB_HOME" = "الصفحة الرئيسية";
 "DS_TAB_NOTE" = "أشياء يجب تذكرها";
 "DS_TAB_MINE" = "لي";
 //======================home=================================
 "DS_HOME_TITLE" = "الصفحة الرئيسية";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "المفكرة";
 "DS_HOME_CELL_NOTES_DETAIL"  = "انقر على السجل";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "المنبه";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "ذكر";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "تقويم";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "الاستعلام الدوري";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "حالة الطقس";
 "DS_HOME_CELL_WEATHER_DETAIL" = "السفر ضروري";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "المفكرة";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "المنبه";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "ألغيت";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "الدورة التالية";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "حالة الطقس";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "لم تسجل أي شيء بعد";
 "DS_NOTE_NOTES_DETAIL"  = "بدء تسجيل لحظاتك ...";
 "DS_NOTE_NOTES_DETAIL1"   = "سجل اللحظة الثمينة، من الآن فصاعدا ...";
-
 "DS_NOTE_BTN_SAVE"  = "حفظ";
 "DS_NOTE_BTN_UP" = "في";
 "DS_NOTE_BTN_DOWN" = "أدنى";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "نصب";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "في يناير";
+"DS_MON_2" = "فبراير";
+"DS_MON_3" = "مارس";
+"DS_MON_4" = "أبريل";
+"DS_MON_5" = "مايو";
+"DS_MON_6" = "يونيو";
+"DS_MON_7" = "يوليو";
+"DS_MON_8" = "أغسطس";
+"DS_MON_9" = "سبتمبر";
+"DS_MON_10" = "أكتوبر";
+"DS_MON_11" = "تشرين الثاني";
+"DS_MON_12" = "ديسمبر";
+"DS_MINE_CAMERA" = "كاميرا";
+"DS_MINE_PHOTOS" = "رواق";

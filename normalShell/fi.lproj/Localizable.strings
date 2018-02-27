@@ -7,28 +7,22 @@
 */
 
 
+//============================tab=================================================//
 "DS_TAB_HOME" = "Kotisivu";
 "DS_TAB_NOTE" = "Muistettavaa";
 "DS_TAB_MINE" = "minun";
 //======================home=================================
 "DS_HOME_TITLE" = "Kotisivu主页";
-
 "DS_HOME_CELL_NOTES_TITLE"   = "muistilehtiö";
 "DS_HOME_CELL_NOTES_DETAIL"  = "Napsauta tallenna";
-
 "DS_HOME_CELL_CLOCK_TITLE"   = "Herätyskello";
 "DS_HOME_CELL_CLOCK_DETAIL"  = "muistuttaa";
-
 "DS_HOME_CELL_CALENDAR_TITLE" = "kalenteri";
 "DS_HOME_CELL_CALENDAR_DETAIL" = "Määräajoin tehty kysely";
-
 "DS_HOME_CELL_WEATHER_TITLE"  = "sää";
 "DS_HOME_CELL_WEATHER_DETAIL" = "Matkailu on välttämätöntä";
-
 ///++++++++++++++++++++homeSubNote+++++++++++++++++++++++++++++++++
 "DS_HOME_NOTE_TITLE"  = "muistilehtiö";
-
-
 ///++++++++++++++++++++homeSubClock+++++++++++++++++++++++++++++++++
 "DS_HOME_CLOCK_TITLE"  = "Herätyskello";
 "DS_HOME_CLOCK_BTN_CANCEL"  = "peruttu";
@@ -39,12 +33,10 @@
 "DS_HOME_CALENDAR_BTN_NEXT"  = "Seuraava kierros";
 ///++++++++++++++++++++homeSubWeather+++++++++++++++++++++++++++++++++
 "DS_HOME_WEATHER_TITLE"  = "sää";
-
 //======================note=================================
 "DS_NOTE_NOTES_TITLE"   = "Et ole vielä tallentanut mitään";
 "DS_NOTE_NOTES_DETAIL"  = "Aloita hetkien tallentaminen ...";
 "DS_NOTE_NOTES_DETAIL1"   = "Tallenna arvokas hetki, nyt ...";
-
 "DS_NOTE_BTN_SAVE"  = "Tallenna";
 "DS_NOTE_BTN_UP" = "päälle";
 "DS_NOTE_BTN_DOWN" = "alempi";
@@ -57,3 +49,18 @@
 "DS_MINE_VERSION_DETAIL" = "1.0.0";
 "DS_MINE_SETTING_TITLE" = "perustettu";
 "DS_MINE_SETTING_DETAIL" = " ";
+//======================Month=================================
+"DS_MON_1" = "januari";
+"DS_MON_2" = "februari";
+"DS_MON_3" = "maart";
+"DS_MON_4" = "april";
+"DS_MON_5" = "mei";
+"DS_MON_6" = "juni";
+"DS_MON_7" = "juli";
+"DS_MON_8" = "augustus";
+"DS_MON_9" = "september";
+"DS_MON_10" = "oktober";
+"DS_MON_11" = "november";
+"DS_MON_12" = "december";
+"DS_MINE_CAMERA" = "Caméra";
+"DS_MINE_PHOTOS" = "Album";
