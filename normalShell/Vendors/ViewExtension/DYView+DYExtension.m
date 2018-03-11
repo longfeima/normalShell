@@ -10,7 +10,7 @@
 
 
 #import "DYView+DYExtension.h"
-#import "DWExtensionUtils.h"
+//#import "DWExtensionUtils.h"
 
 @implementation UIView (DYViewExtension)
 
@@ -133,28 +133,6 @@
 @implementation  UIButton (DYViewExtension)
 
 
--(void)dyBackgroundColorStyleModelOne
-{
-    [self setBackgroundImage:[UIImage imageWithColor:kCOLOR_R_G_B_A(25, 143, 236, 1)]forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageWithColor:kCOLOR_R_G_B_A(25, 123, 226, 1)] forState:UIControlStateHighlighted];
-    self.titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    self.titleLabel.height = 46;
-    self.layer.cornerRadius = 3.0f;
-    self.layer.masksToBounds = YES;
-}
-
--(void)dyBackgroundColorStyleModelTwo
-{
-    [self setBackgroundImage:[UIImage imageWithColor:kCOLOR_R_G_B_A(94, 188, 252, 1)] forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageWithColor:kCOLOR_R_G_B_A(94, 160, 230, 1)] forState:UIControlStateHighlighted];
-    [self setBackgroundImage:[UIImage imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateDisabled];
-    self.layer.cornerRadius=1.50f;
-    self.layer.masksToBounds=YES;
-    [self setTitle:@"发送验证码" forState:UIControlStateNormal];
-    [self setTitle:@"正在发送" forState:UIControlStateDisabled];
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
-}
 
 
 @end

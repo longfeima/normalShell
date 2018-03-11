@@ -40,7 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    DS_APP_DELEGATE.rootTab.selectIndex = 0;
+    DS_APP_DELEGATE.rootTab.selectedIndex = 0;
     [self.headerView reloadData];
 }
 

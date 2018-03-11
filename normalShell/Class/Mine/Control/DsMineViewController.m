@@ -97,7 +97,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    DS_APP_DELEGATE.rootTab.selectIndex = 2;
+    DS_APP_DELEGATE.rootTab.selectedIndex = 2;
 }
 
 
