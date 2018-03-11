@@ -21,11 +21,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self tableView];
-    self.navigationView.navType = DD_NormalType;
-    
-    self.navigationView.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);;
+//    self.navigationView.navType = DD_NormalType;
+//    
+//    self.navigationView.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);;
+    self.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);
 }
-
+//返回
+- (void)popClick{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     

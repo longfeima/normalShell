@@ -32,7 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = DS_COLOR_HEXCOLOR(@"f1f1f1");
-    self.navigationView.title = DSLocalizedString(DS_HOME_TITLE);
+//    self.navigationView.title = DSLocalizedString(DS_HOME_TITLE);
+    self.title = DSLocalizedString(DS_HOME_TITLE);
     [self creatUI];
     // Do any additional setup after loading the view.
 }

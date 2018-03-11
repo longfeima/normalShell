@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationView.title = [_dict objectForKey:@"title"];
-    self.navigationView.navType = DD_NormalType;
+//    self.navigationView.title = [_dict objectForKey:@"title"];
+    self.title = [_dict objectForKey:@"title"];
+//    self.navigationView.navType = DD_NormalType;
     [self.view addSubview:self.textLabel];
     [_textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(DS_APP_NAV_HEIGHT + 10);

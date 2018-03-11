@@ -17,7 +17,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.navigationController.navigationBarHidden = YES;
+//        self.navigationController.navigationBarHidden = YES;
         
     }
     return self;
@@ -25,18 +25,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self navigationView];
+//    [self navigationView];
     
     self.view.backgroundColor = DS_COLOR_GLOBAL_BACKGROUND;
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     self.navigationView.titleLb.textColor = [UIColor whiteColor];
-    self.navigationView.navType = DD_DefaultType;
-    self.navigationView.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
-    
-    
+//    self.navigationView.navType = DD_DefaultType;
+//    self.navigationView.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
+    self.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
     self.gradientLayer = [CAGradientLayer layer];
     self.gradientLayer.frame = self.navigationView.bounds;
     self.gradientLayer.zPosition = -1;
@@ -53,7 +52,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     
 }
 

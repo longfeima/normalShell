@@ -185,9 +185,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationView.navType = DD_NormalType;
-//    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationView.title = DSLocalizedString(DS_HOME_CLOCK_TITLE);
+//    self.navigationView.navType = DD_NormalType;
+////    self.view.backgroundColor = [UIColor whiteColor];
+//    self.navigationView.title = DSLocalizedString(DS_HOME_CLOCK_TITLE);
+    
+    self.title = DSLocalizedString(DS_HOME_CLOCK_TITLE);
     [self creatUI];
     [self configConstraint];
     [self configData];

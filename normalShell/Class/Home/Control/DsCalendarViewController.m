@@ -28,10 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self tableView];
-    self.navigationView.navType = DD_NormalType;
+//    self.navigationView.navType = DD_NormalType;
     
-    self.navigationView.title = DSLocalizedString(DS_HOME_CALENDAR_TITLE);
-
+//    self.navigationView.title = DSLocalizedString(DS_HOME_CALENDAR_TITLE);
+    self.title = DSLocalizedString(DS_HOME_CALENDAR_TITLE);
     [self configNormal];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "DsMineViewController.h"
-
+#import <UIView+Toast.h>
 #import "DsMoreHeadView.h"
 
 //#import "DsTerminalsTableViewCell.h"
@@ -74,9 +74,10 @@
     // Do any additional setup after loading the view.
     self.tableView.showsVerticalScrollIndicator = NO;
     self.navigationView.backgroundColor = [UIColor clearColor];
-    self.navigationView.navType = DD_DefaultType;
-    self.navigationView.hidden = YES;
-    self.navigationView.titleLb.hidden = YES;
+//    self.navigationView.navType = DD_DefaultType;
+//    self.navigationView.hidden = YES;
+//    self.navigationView.titleLb.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     [self createData];
     [self creatUI];
 }
@@ -126,8 +127,39 @@
     self.headeImageV.frame = self.headerView.frame;
     __weak DsMineViewController *weakSelf = self;
     self.headerView.moreHeadeClickBlock = ^(NSInteger index){
-        [[sShowTisWindow shareTipsWindow] showSheetWithObject:@[DSLocalizedString(DS_MINE_CAMERA),DSLocalizedString(DS_MINE_PHOTOS)] Title:@" " Delegate:weakSelf Type:Ds_Sheet_Default];
-        [sShowTisWindow shareTipsWindow].isClickHide = YES;
+//        [[sShowTisWindow shareTipsWindow] showSheetWithObject:@[DSLocalizedString(DS_MINE_CAMERA),DSLocalizedString(DS_MINE_PHOTOS)] Title:@" " Delegate:weakSelf Type:Ds_Sheet_Default];
+//        [sShowTisWindow shareTipsWindow].isClickHide = YES;
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *actionImg = [UIAlertAction actionWithTitle:DSLocalizedString(DS_MINE_PHOTOS) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+            {
+                [weakSelf choosePicture];
+            }else{
+                if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+                {
+                    [weakSelf choosePicture];
+                }else{
+//                    [[sShowTisWindow shareTipsWindow] showAlertWithTitle:@"温馨提示" Message:@"请在设置-->隐私-->相片，中开启本应用的相机访问权限！！" Cancel:@"取消" Delegate:weakSelf];
+                    [weakSelf.view makeToast:@"请在设置-->隐私-->相片，中开启本应用的相机访问权限！！" duration:0.5 position:CSToastPositionCenter];
+                }
+            }
+        }];
+        UIAlertAction *actionCamer = [UIAlertAction actionWithTitle:DSLocalizedString(DS_MINE_CAMERA) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+            {
+                
+                [weakSelf makePhoto];
+            }else{
+//                [[sShowTisWindow shareTipsWindow] showAlertWithTitle:@"温馨提示" Message:@"请在设置-->隐私-->相机，中开启本应用的相机访问权限！！" Cancel:@"取消" Delegate:weakSelf];
+                [weakSelf.view makeToast:@"请在设置-->隐私-->相机，中开启本应用的相机访问权限！！" duration:0.5 position:CSToastPositionCenter];
+            }
+        }];
+//        UIAlertAction *actionCancle = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//
+//        }];
+        [alertView addAction:actionCamer];
+        [alertView addAction:actionImg];
+        [weakSelf presentViewController:alertView animated:YES completion:nil];
     };
     [self.headerView addSubview:self.headeImageV];
     [self.headerView sendSubviewToBack:self.headeImageV];

@@ -21,11 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self tableView];
-    self.navigationView.navType = DD_NormalType;
+//    self.navigationView.navType = DD_NormalType;
+//    
+//    self.navigationView.title = DSLocalizedString(DS_HOME_NOTE_TITLE);
     
-    self.navigationView.title = DSLocalizedString(DS_HOME_NOTE_TITLE);
+    self.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
