@@ -73,7 +73,7 @@
     //不登录不做请求
     // Do any additional setup after loading the view.
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.navigationView.backgroundColor = [UIColor clearColor];
+//    self.navigationView.backgroundColor = [UIColor clearColor];
 //    self.navigationView.navType = DD_DefaultType;
 //    self.navigationView.hidden = YES;
 //    self.navigationView.titleLb.hidden = YES;
@@ -154,11 +154,12 @@
                 [weakSelf.view makeToast:@"请在设置-->隐私-->相机，中开启本应用的相机访问权限！！" duration:0.5 position:CSToastPositionCenter];
             }
         }];
-//        UIAlertAction *actionCancle = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//
-//        }];
+        UIAlertAction *actionCancle = [UIAlertAction actionWithTitle:DSLocalizedString(DS_HOME_CLOCK_BTN_CANCEL) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+        }];
         [alertView addAction:actionCamer];
         [alertView addAction:actionImg];
+        [alertView addAction:actionCancle];
         [weakSelf presentViewController:alertView animated:YES completion:nil];
     };
     [self.headerView addSubview:self.headeImageV];

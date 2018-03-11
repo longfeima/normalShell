@@ -29,7 +29,6 @@ static NSInteger const kPageCount = 4;
         [self setupStartImage];
     }
     
-    self.navigationView.hidden = YES;
     // Do any additional setup after loading the view.
 }
 

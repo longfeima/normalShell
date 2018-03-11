@@ -43,9 +43,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self tableView];
-    
-    self.navigationView.title = @"设置";
-    self.navigationView.navType = DD_NormalType;
 }
 
 

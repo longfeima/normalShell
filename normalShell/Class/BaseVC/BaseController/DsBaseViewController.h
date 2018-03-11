@@ -10,7 +10,6 @@
 #import "DDBaseNavigationView.h"
 @interface DsBaseViewController : UIViewController
 @property (nonatomic, assign) BOOL isPresent;
-@property (nonatomic, strong) DDBaseNavigationView *navigationView;
 @property (nonatomic, assign) BOOL needShowColorLayer;
 
 - (void)back:(id)sender;

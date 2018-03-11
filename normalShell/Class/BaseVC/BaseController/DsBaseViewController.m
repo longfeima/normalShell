@@ -32,14 +32,11 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
 //    self.navigationController.navigationBarHidden = YES;
-    self.navigationView.titleLb.textColor = [UIColor whiteColor];
 //    self.navigationView.navType = DD_DefaultType;
 //    self.navigationView.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
     self.title = DSLocalizedString(DS_HOME_CELL_NOTES_TITLE);
     self.gradientLayer = [CAGradientLayer layer];
-    self.gradientLayer.frame = self.navigationView.bounds;
     self.gradientLayer.zPosition = -1;
-    [self.navigationView.layer addSublayer:self.gradientLayer];
     UIColor *startColor = DS_COLOR_HEXCOLOR(@"0x57C9E8");
     UIColor *endColor = DS_COLOR_HEXCOLOR(@"0x31ded8");
     self.gradientLayer.colors = @[(__bridge id)startColor.CGColor, (__bridge id)endColor.CGColor];
@@ -65,7 +62,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    [self.view bringSubviewToFront:self.navigationView];
     
 }
 
@@ -74,40 +70,21 @@
     if (!_needShowColorLayer) {
         [self.gradientLayer removeFromSuperlayer];
     } else {
-        [self.navigationView.layer addSublayer:self.gradientLayer];
+
     }
 }
 
 - (void)setupBackItem {
-    UIButton *btn = self.navigationView.leftBarButtonItem;
-    self.navigationView.leftBarButtonItem.hidden = NO;
-    btn.exclusiveTouch = YES;
-    [btn setImage:[UIImage imageNamed:@"icon_nav_back_white"] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"icon_nav_back_white"] forState:UIControlStateHighlighted];
 }
 
 - (void)setupCloseItem {
-    UIButton *btn = self.navigationView.leftBarButtonItem;
-    self.navigationView.leftBarButtonItem.hidden = NO;
-    btn.exclusiveTouch = YES;
-    [btn setImage:[UIImage imageNamed:@"icon_nav_close_white_nor"] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"icon_nav_close_white_press"] forState:UIControlStateHighlighted];
     
 }
 
 - (void)setupSpecialBackItem {
-    UIButton *btn = self.navigationView.leftBarButtonItem;
-    self.navigationView.leftBarButtonItem.hidden = NO;
-    btn.exclusiveTouch = YES;
-    [btn setImage:[UIImage imageNamed:@"icon_nav_back_blue"] forState:UIControlStateNormal];
 }
 
 - (void)setupSpecialCloseItem {
-    UIButton *btn = self.navigationView.leftBarButtonItem;
-    self.navigationView.leftBarButtonItem.hidden = NO;
-    btn.exclusiveTouch = YES;
-    [btn setImage:[UIImage imageNamed:@"icon_nav_close_blue_nor"] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"icon_nav_close_blue_press"] forState:UIControlStateHighlighted];
 }
 
 
@@ -158,23 +135,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
-//////// ----lazy
-
-- (DDBaseNavigationView *)navigationView{
-    if (!_navigationView) {
-        _navigationView = [[DDBaseNavigationView alloc]initWithFram:CGRectMake(0, 0, DS_APP_SIZE_WIDTH, DS_APP_NAV_HEIGHT) NavType:DD_DefaultType AndDelegate:self];
-        _navigationView.DDNavColumnBlock = ^(NSInteger index){
-            NSLog(@"点击了第%lu个",index);
-        };
-        [self.view addSubview:_navigationView];
-        [self.view bringSubviewToFront:_navigationView];
-    }
-    
-    return _navigationView;
-    
-}
 
 @end

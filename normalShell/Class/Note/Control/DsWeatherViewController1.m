@@ -78,12 +78,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationView.navType = DD_ShareType;
-    self.navigationView.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);
+    self.title = DSLocalizedString(DS_HOME_WEATHER_TITLE);
     NSString *language = [NSLocale preferredLanguages].firstObject;
-    if ([language hasPrefix:@"zh"]) {
-        self.navigationView.rightBarButtonImage = @"location_hardware";
-    }
+    
     //创建背景视图
     [self createBackgroundView];
     

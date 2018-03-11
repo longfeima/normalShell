@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationView.navType = DD_NormalType;
     self.view.backgroundColor = [UIColor colorWithRed:229.0/255 green:229.0/255 blue:229.0/255 alpha:1.0f];
     [self.view addSubview:self.textF];
     [self.view addSubview:self.textView];
