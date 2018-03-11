@@ -10,19 +10,10 @@
 #import <UIView+Toast.h>
 #import "DsMoreHeadView.h"
 
-//#import "DsTerminalsTableViewCell.h"
 #import "DsValue1TableViewCell.h"
 
 
-//#import "DsServiceViewController.h"
-//#import "DsClientViewController.h"
-//#import "DsCheckViewController.h"
-#import "DsSeetingViewController.h"
-
-//#import "DsMessageViewController.h"
-
-
-@interface DsMineViewController ()<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate, sTipsWindowProtocol>
+@interface DsMineViewController ()<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 
 {
@@ -73,10 +64,7 @@
     //不登录不做请求
     // Do any additional setup after loading the view.
     self.tableView.showsVerticalScrollIndicator = NO;
-//    self.navigationView.backgroundColor = [UIColor clearColor];
-//    self.navigationView.navType = DD_DefaultType;
-//    self.navigationView.hidden = YES;
-//    self.navigationView.titleLb.hidden = YES;
+
     self.navigationController.navigationBar.hidden = YES;
     [self createData];
     [self creatUI];
@@ -235,7 +223,7 @@
                 
                 [self makePhoto];
             }else{
-                [[sShowTisWindow shareTipsWindow] showAlertWithTitle:@"温馨提示" Message:@"请在设置-->隐私-->相机，中开启本应用的相机访问权限！！" Cancel:@"取消" Delegate:self];
+                
             }
         }
             break;
@@ -245,7 +233,7 @@
             {
                 [self choosePicture];
             }else{
-                [[sShowTisWindow shareTipsWindow] showAlertWithTitle:@"温馨提示" Message:@"请在设置-->隐私-->相片，中开启本应用的相机访问权限！！" Cancel:@"取消" Delegate:self];
+                
             }
             
         }
@@ -254,7 +242,7 @@
         default:
             break;
     }
-    [[sShowTisWindow shareTipsWindow] hideWindowSubviews];
+    
 }
 
 
@@ -302,9 +290,7 @@
 }
 
 - (void)DDRightBarButtonItem{
-    DsSeetingViewController *setting = [[DsSeetingViewController alloc]init];
-    setting.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:setting animated:YES];
+    
 }
 
 

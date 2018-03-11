@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DDBaseNavigationView.h"
+
 @interface DsBaseViewController : UIViewController
 @property (nonatomic, assign) BOOL isPresent;
 @property (nonatomic, assign) BOOL needShowColorLayer;

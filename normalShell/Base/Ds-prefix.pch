@@ -22,7 +22,7 @@
 #import "DsLanguageConfig.h"
 #import "DsDatabaseManger.h"
 
-#import "sShowTisWindow.h"
+
 
 //Category
 #import "UIColor+DDSC.h"

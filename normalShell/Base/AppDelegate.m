@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DsHomeViewController.h"
 #import "DsMineViewController.h"
-#import "DsStartViewController.h"
+
 #import "DsNoteViewController.h"
 #import <IQKeyboardManager.h>
 
@@ -38,7 +38,7 @@ static BOOL isProduction = YES;
 
 
 @property (nonatomic, strong) UIImageView *blurView;
-@property (nonatomic, strong) DsStartViewController *startVC;
+
 
 
 @end

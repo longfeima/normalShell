@@ -14,7 +14,7 @@
 #undef  RGBCOLOR
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define kMaxLength 10
-@interface UserFeedBackViewController ()<UITextViewDelegate,DDNavigationViewDelegate,UITextFieldDelegate>
+@interface UserFeedBackViewController ()<UITextViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic, strong) PlaceholderTextView * textView;
 @property (nonatomic,strong) UITextField *textF;
