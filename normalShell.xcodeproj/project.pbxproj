@@ -12,8 +12,8 @@
 		14461058203FAF7000C6492D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14461057203FAF6F00C6492D /* 1.jpg */; };
 		1446107B203FC1F800C6492D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1446107D203FC1F800C6492D /* InfoPlist.strings */; };
 		14461099203FE8E300C6492D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14461095203FE27400C6492D /* Localizable.strings */; };
-		144610A12040608600C6492D /* DDCustomCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */; };
-		144610A22040608600C6492D /* DDCustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109E2040608600C6492D /* DDCustomCollectionView.m */; };
+		144610A12040608600C6492D /* DsCustomCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109C2040608600C6492D /* DsCustomCollectionFlowLayout.m */; };
+		144610A22040608600C6492D /* DsCustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446109E2040608600C6492D /* DsCustomCollectionView.m */; };
 		144610A32040608600C6492D /* headeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A02040608600C6492D /* headeView.m */; };
 		144610A8204060E500C6492D /* DsHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A4204060E400C6492D /* DsHomeHeadView.m */; };
 		144610A9204060E500C6492D /* DsHomeViewFunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144610A6204060E500C6492D /* DsHomeViewFunctionCell.m */; };
@@ -175,10 +175,10 @@
 		14461094203FE27400C6492D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14461096203FE27700C6492D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		14461097203FE27A00C6492D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		1446109B2040608600C6492D /* DDCustomCollectionFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCollectionFlowLayout.h; sourceTree = "<group>"; };
-		1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCustomCollectionFlowLayout.m; sourceTree = "<group>"; };
-		1446109D2040608600C6492D /* DDCustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCollectionView.h; sourceTree = "<group>"; };
-		1446109E2040608600C6492D /* DDCustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCustomCollectionView.m; sourceTree = "<group>"; };
+		1446109B2040608600C6492D /* DsCustomCollectionFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsCustomCollectionFlowLayout.h; sourceTree = "<group>"; };
+		1446109C2040608600C6492D /* DsCustomCollectionFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsCustomCollectionFlowLayout.m; sourceTree = "<group>"; };
+		1446109D2040608600C6492D /* DsCustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsCustomCollectionView.h; sourceTree = "<group>"; };
+		1446109E2040608600C6492D /* DsCustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsCustomCollectionView.m; sourceTree = "<group>"; };
 		1446109F2040608600C6492D /* headeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headeView.h; sourceTree = "<group>"; };
 		144610A02040608600C6492D /* headeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headeView.m; sourceTree = "<group>"; };
 		144610A4204060E400C6492D /* DsHomeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsHomeHeadView.m; sourceTree = "<group>"; };
@@ -443,10 +443,10 @@
 		1446109A2040608600C6492D /* DDCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				1446109B2040608600C6492D /* DDCustomCollectionFlowLayout.h */,
-				1446109C2040608600C6492D /* DDCustomCollectionFlowLayout.m */,
-				1446109D2040608600C6492D /* DDCustomCollectionView.h */,
-				1446109E2040608600C6492D /* DDCustomCollectionView.m */,
+				1446109B2040608600C6492D /* DsCustomCollectionFlowLayout.h */,
+				1446109C2040608600C6492D /* DsCustomCollectionFlowLayout.m */,
+				1446109D2040608600C6492D /* DsCustomCollectionView.h */,
+				1446109E2040608600C6492D /* DsCustomCollectionView.m */,
 				1446109F2040608600C6492D /* headeView.h */,
 				144610A02040608600C6492D /* headeView.m */,
 			);
@@ -1189,7 +1189,7 @@
 			files = (
 				14DFF270203EAECE00583046 /* DsHomeViewController.m in Sources */,
 				14DFF26A203EA6A500583046 /* UITabBarItem+CustomBadge.m in Sources */,
-				144610A22040608600C6492D /* DDCustomCollectionView.m in Sources */,
+				144610A22040608600C6492D /* DsCustomCollectionView.m in Sources */,
 				14DFF264203EA6A500583046 /* UITabBar+Extension.m in Sources */,
 				144610C02040775A00C6492D /* DsDatabaseManger.m in Sources */,
 				144610D7204131F900C6492D /* LTSCalendarAppearance.m in Sources */,
@@ -1233,7 +1233,7 @@
 				14461050203FAC8700C6492D /* DsMoreHeadView.m in Sources */,
 				144610DF204131F900C6492D /* LTSCalendarWeekDayView.m in Sources */,
 				144610B5204066F800C6492D /* DsWeatherViewController.m in Sources */,
-				144610A12040608600C6492D /* DDCustomCollectionFlowLayout.m in Sources */,
+				144610A12040608600C6492D /* DsCustomCollectionFlowLayout.m in Sources */,
 				14461ABA20417DDD00C6492D /* WeatherView.m in Sources */,
 				144610AF2040660A00C6492D /* DsCalendarViewController.m in Sources */,
 				14461B2020417DE600C6492D /* CardView.m in Sources */,

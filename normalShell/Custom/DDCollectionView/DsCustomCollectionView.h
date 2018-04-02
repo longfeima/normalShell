@@ -1,5 +1,5 @@
 //
-//  DDCustomCollectionView.h
+//  DsCustomCollectionView.h
 //  textCollectionView
 //
 //  Created by Seven on 2017/4/11.
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, DDCollectionViewScrollDirection) {
 };
 
 
-@interface DDCustomCollectionView : UIView
+@interface DsCustomCollectionView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame AndItemIndetifications:(NSArray <NSString *>*) itemIdentis;
 

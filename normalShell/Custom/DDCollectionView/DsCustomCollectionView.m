@@ -1,5 +1,5 @@
 //
-//  DDCustomCollectionView.m
+//  DsCustomCollectionView.m
 //  textCollectionView
 //
 //  Created by Seven on 2017/4/11.
@@ -40,9 +40,9 @@
 
 
 
-#import "DDCustomCollectionView.h"
+#import "DsCustomCollectionView.h"
 
-#import "DDCustomCollectionFlowLayout.h"
+#import "DsCustomCollectionFlowLayout.h"
 
 #import "headeView.h"
 
@@ -54,7 +54,7 @@
 
 
 
-@interface DDCustomCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DsCustomCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 /**
  防止空class注册
@@ -63,14 +63,14 @@
 /**
  动画约束，暂时不用，需要的话再做修改
  */
-@property (nonatomic, strong) DDCustomCollectionFlowLayout *layout;
+@property (nonatomic, strong) DsCustomCollectionFlowLayout *layout;
 /**
  普通约束，根据类型做特效处理，目前不做
  */
 @property (nonatomic, strong)UICollectionViewFlowLayout *collLayout;
 
 @end
-@interface DDCustomCollectionView ()
+@interface DsCustomCollectionView ()
 
 {
     NSMutableArray *itemsSelect;
@@ -78,7 +78,7 @@
 
 @end
 
-@implementation DDCustomCollectionView
+@implementation DsCustomCollectionView
 
 - (instancetype)initWithFrame:(CGRect)frame AndItemIndetifications:(NSArray <NSString *>*) itemIdentis{
     if (self = [super initWithFrame:frame]) {
@@ -355,10 +355,10 @@
 }
 
 
-- (DDCustomCollectionFlowLayout *)layout{
+- (DsCustomCollectionFlowLayout *)layout{
     
     if (!_layout) {
-        _layout = [[DDCustomCollectionFlowLayout alloc]init];
+        _layout = [[DsCustomCollectionFlowLayout alloc]init];
         _layout._type = S_FlowLayoutTypeScale;
         _layout._itemSize = CGSizeMake(100, 100);
         _layout._itemScale = 1;

@@ -1,5 +1,5 @@
 //
-//  DDCustomCollectionFlowLayout.h
+//  DsCustomCollectionFlowLayout.h
 //  textCollectionView
 //
 //  Created by Seven on 2017/4/11.
@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, S_FlowLayoutType) {
 };
 
 
-@interface DDCustomCollectionFlowLayout : UICollectionViewFlowLayout
+@interface DsCustomCollectionFlowLayout : UICollectionViewFlowLayout
 
 @property (nonatomic, assign) S_FlowLayoutType _type;
 @property (nonatomic, assign) CGSize _itemSize;

@@ -1,5 +1,5 @@
 //
-//  DDCustomCollectionFlowLayout.m
+//  DsCustomCollectionFlowLayout.m
 //  textCollectionView
 //
 //  Created by Seven on 2017/4/11.
@@ -39,7 +39,7 @@
 //                  不见满街漂亮妹，哪个归得程序员？
 
 
-#import "DDCustomCollectionFlowLayout.h"
+#import "DsCustomCollectionFlowLayout.h"
 
 #define S_COLLECTIONVIEW_WIDTH      self.collectionView.frame.size.width
 #define S_COLLECTIONVIEW_HEIGHT     self.collectionView.frame.size.height
@@ -52,13 +52,13 @@
 static CGFloat _youtW = 100;//375 / 3.0;
 static CGFloat _youtH = 100;
 
-@interface DDCustomCollectionFlowLayout ()
+@interface DsCustomCollectionFlowLayout ()
 
 @end
 
 
 
-@implementation DDCustomCollectionFlowLayout
+@implementation DsCustomCollectionFlowLayout
 
 
 

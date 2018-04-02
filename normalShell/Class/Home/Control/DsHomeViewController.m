@@ -8,7 +8,7 @@
 
 #import "DsHomeViewController.h"
 #import "DsHomeHeadView.h"
-#import "DDCustomCollectionView.h"
+#import "DsCustomCollectionView.h"
 
 #import "DsHomeViewFunctionCell.h"
 
@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) UIScrollView *bgScrollView;
 @property (nonatomic, strong) DsHomeHeadView *headerView;
-@property (nonatomic, strong) DDCustomCollectionView *functinoCollectionView;
+@property (nonatomic, strong) DsCustomCollectionView *functinoCollectionView;
 
 
 @end
@@ -68,7 +68,7 @@
                             @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL),
                             @"imageUrl": @"weather"}
                           ];
-    self.functinoCollectionView = [[DDCustomCollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame) + 10, DS_APP_SIZE_WIDTH, testInfo.count * 100) AndItemIndetifications:@[@"DsHomeViewFunctionCell"]];
+    self.functinoCollectionView = [[DsCustomCollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame) + 10, DS_APP_SIZE_WIDTH, testInfo.count * 100) AndItemIndetifications:@[@"DsHomeViewFunctionCell"]];
     [self.bgScrollView addSubview:self.functinoCollectionView];
     self.functinoCollectionView.itemsArray = @[@"DsHomeViewFunctionCell",
                                                @"DsHomeViewFunctionCell",
