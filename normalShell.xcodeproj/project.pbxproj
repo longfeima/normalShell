@@ -875,16 +875,8 @@
 		14DFF271203EAFF900583046 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				14DFF272203EB00300583046 /* StartView */,
 			);
 			path = Others;
-			sourceTree = "<group>";
-		};
-		14DFF272203EB00300583046 /* StartView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StartView;
 			sourceTree = "<group>";
 		};
 		14DFF276203EB13300583046 /* Custom */ = {
@@ -1434,7 +1426,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = normalShell/normalShell.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9V7BN7XCZ7;
+				DEVELOPMENT_TEAM = AL8Z95Q4JM;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/normalShell/Base/Ds-prefix.pch";
 				INFOPLIST_FILE = normalShell/Info.plist;
@@ -1445,10 +1437,10 @@
 					"$(PROJECT_DIR)/normalShell/CaiPiao/Third/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)/normalShell/CaiPiao/Third/WechatOpenSDK1.8.0_NoPay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seven.sixDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddsoucai.service;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f2d03bd-65d5-4c2c-b171-ac5fa2fb873b";
-				PROVISIONING_PROFILE_SPECIFIER = "Seven debug";
+				PROVISIONING_PROFILE = "fa093b3d-8fbd-4678-a76a-cd706da0f231";
+				PROVISIONING_PROFILE_SPECIFIER = "service-debug";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1473,7 +1465,7 @@
 					"$(PROJECT_DIR)/normalShell/CaiPiao/Third/UMessage_Sdk_1.5.0a",
 					"$(PROJECT_DIR)/normalShell/CaiPiao/Third/WechatOpenSDK1.8.0_NoPay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seven.sixDream;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddsoucai.service;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b8e7c623-af7e-4297-aeed-66e22c3bb073";
 				PROVISIONING_PROFILE_SPECIFIER = "Seven Release";

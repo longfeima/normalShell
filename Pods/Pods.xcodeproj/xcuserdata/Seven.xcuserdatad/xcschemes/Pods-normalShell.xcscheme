@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6801990998D8EBAF5E20D15A8261DEA5'
-               BlueprintName = 'Pods-normalShell'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-normalShell.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6801990998D8EBAF5E20D15A8261DEA5"
+               BlueprintName = "Pods-normalShell"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libPods-normalShell.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

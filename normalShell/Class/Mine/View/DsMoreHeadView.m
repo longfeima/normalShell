@@ -96,15 +96,6 @@
     
 }
 
-//- (UIView *)testView{
-//    
-//    if (!_testView) {
-//        _testView = [UIView new];
-//        _testView.backgroundColor = [UIColor orangeColor];
-//    }
-//    return _testView;
-//}
-
 - (UILabel *)testLb{
     
     if (!_testLb) {
