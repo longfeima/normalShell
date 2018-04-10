@@ -14,13 +14,14 @@
 #import <IQKeyboardManager.h>
 
 #import "UMMobClick/MobClick.h"
-
+#import <AFNetworking.h>
+#import "ViewController.h"
 //#import "UMessage.h"
 //#import "WXApi.h"
 
 #import "JPUSHService.h"
 
-static NSString *appKey = @"6943b77ca1a7b35800302fa4";
+static NSString *appKey = @"d2aaf2d63850103d1845a107";
 static NSString *channel = @"CP55-Production";
 static BOOL isProduction = YES;
 
@@ -51,8 +52,45 @@ static BOOL isProduction = YES;
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [DsUtils saveFirstInstallTime];
     [self confSDKWithDict:launchOptions];
-    [self creatTab];
-    self.window.rootViewController = self.rootTab;
+    
+    AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
+    NSString *urlString = @"http://211.159.186.227:8085/Account/GetConfig?token=7d5bb8e9-5e23-4f68-97c5-7d22ed829c05";
+    //    iOS程序访问HTTP资源时需要对URL进行Encode，比如像拼出来的 http://ami.ac?p1=%+&sa f&p2=中文，其中的中文、特殊符号&％和空格都必须进行转译才能正确访问
+    //    NSString *str =[content stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+//    NSDictionary *params = @{@"token": @"7d5bb8e9-5e23-4f68-97c5-7d22ed829c05"};
+    //  默认提交请求的数据是二进制的,返回格式是JSON；如果提交数据是JSON的,需要将请求格式设置为AFJSONRequestSerializer
+    //  设置请求格式
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //    设置返回格式
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"post请求成功＝＝＝＝%@",dict);
+        if (!dict) {
+            [self creatTab];
+            return ;
+        }
+        int success = [[dict objectForKey:@"success"] intValue];
+        if (success) {
+            int status = 1;//[[dict objectForKey:@"status"] intValue];
+            if (status) {//开关打开
+                ViewController *vc = [[ViewController alloc] init];
+                self.window.rootViewController = vc;
+                [self.window makeKeyAndVisible];
+            }else{//开关关闭
+                [self creatTab];
+            }
+        }else{
+            [self creatTab];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败＝＝＝＝%@",error);
+        [self creatTab];
+    }];
+
 //    if ([DsUtils isHaveEnoughTimeToJump]) {
 //        self.window = self.baseWindow;
 //    }else{
@@ -155,6 +193,8 @@ static BOOL isProduction = YES;
     self.rootTab.tabBar.barTintColor = [UIColor whiteColor];
     self.rootTab.viewControllers = @[self.homeNav, self.noteNav, self.mineNav];
     
+    self.window.rootViewController = self.rootTab;
+    [self.window makeKeyAndVisible];
 }
 
 
