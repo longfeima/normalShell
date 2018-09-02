@@ -679,7 +679,6 @@
 				144610B9204076EF00C6492D /* Vendors */,
 				14461059203FB3BB00C6492D /* Manager */,
 				14DFF276203EB13300583046 /* Custom */,
-				144714B2203E99BF000211AC /* Model */,
 				144714B5203E9A32000211AC /* Utils */,
 				144714B3203E99E3000211AC /* Class */,
 				144714B4203E9A02000211AC /* Resource */,
@@ -779,18 +778,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		144714B2203E99BF000211AC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		144714B3203E99E3000211AC /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				144714B6203E9A70000211AC /* BaseVC */,
-				14DFF271203EAFF900583046 /* Others */,
 				14DFF2AC203EC01F00583046 /* Note */,
 				144714AD203E95B3000211AC /* Mine */,
 				144714AC203E95AA000211AC /* Home */,
@@ -873,13 +864,6 @@
 			children = (
 				14DFF251203EA69900583046 /* DsUtils.h */,
 				14DFF250203EA69900583046 /* DsUtils.m */,
-			);
-			path = Others;
-			sourceTree = "<group>";
-		};
-		14DFF271203EAFF900583046 /* Others */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Others;
 			sourceTree = "<group>";
