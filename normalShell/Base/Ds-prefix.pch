@@ -33,7 +33,7 @@
 //_______________________________+++++++ pod
 #import <Masonry/Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "UIScrollView+EmptyDataSet.h"
 
 //_______________________________+++++++ SDK
 //#import "JPUSHService.h"
@@ -50,9 +50,20 @@
 
 #pragma mark ---- 彩票
 
-#pragma mark- ---常用的全局宏定义
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"%s, " "line:%d " fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
 
 #define WEAKSELF __weak typeof(self) weakSelf = self
+
+
+#ifdef __OBJC__
+
+#pragma mark- ---常用的全局宏定义
+
 //设置颜色值
 #define kCOLOR_R_G_B_A(r,g,b,a) [UIColor colorWithRed:r/255.0f  green:g/255.0f  blue:b/255.0f alpha:a]
 
@@ -104,6 +115,13 @@
 #define kGlobalLineWidth   ([UIScreen mainScreen].scale == 2?(1/[UIScreen mainScreen].scale):(1 / ([UIScreen mainScreen].scale/ 2)))
 #define kGlobalLineWidthMultiple(multiple)  ([UIScreen mainScreen].scale == 2?(multiple/[UIScreen mainScreen].scale):(multiple / ([UIScreen mainScreen].scale/ 2)))
 
+
+//block 防止循环引用
+#define kWeakSelf               @weakify(self);
+#define kStrongSelf             @strongify(self);
+#define weakify(object)         autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#define strongify(object)       try{} @finally{} __typeof__(object) object = weak##_##object;
+
 #pragma mark- ---系统类
 
 #import <Foundation/Foundation.h>
@@ -116,51 +134,51 @@
 //#import "WSProgressHUD.h"
 //#import "UIImageView+WebCache.h"
 //#import "MJRefresh.h"
-
-//#import "DWExtensionUtils.h"
-//#import "DWParsers.h"
+//#import <UMMobClick/MobClick.h>
+#import "DWExtensionUtils.h"
+#import "DWParsers.h"
 #import "DYView+DYExtension.h"
-//#import "NSDate+Calendar.h"
+#import "NSDate+Calendar.h"
 #import "WSProgressHUD.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
-//#import "JSONModelLib.h"
+#import "JSONModelLib.h"
 #import "Masonry.h"
 #import "TOWebViewController.h"
-
+//#import ""
 
 #pragma mark- ---本项目的相关文件
-//#import "UIBarButtonItem+DWBarButtonItem.h"
-//#import "NSString+WayExtension.h"
+#import "UIBarButtonItem+DWBarButtonItem.h"
+#import "NSString+WayExtension.h"
 
 #pragma mark- -ViewController
 
 #import "AppDelegate.h"
-//#import "CPWebViewController.h"
-//#import "CPBuyLotteryManager.h"
+#import "CPWebViewController.h"
+#import "CPBuyLotteryManager.h"
 
 
 #pragma mark- -Model
 
-//#import "CPLotteryModel.h"
+#import "CPLotteryModel.h"
 
 #pragma mark- -View
 
-//#import "CPVoiceButton.h"
-//#import "CPLotteryShowResultView.h"
+#import "CPVoiceButton.h"
+#import "CPLotteryShowResultView.h"
 
 #pragma mark- -Tool
 
-//#import "CPTimeManager.h"
-//#import "SUMUser.h"
-//#import "SUMRequest.h"
-//#import "NSString+XDJEncrypt.h"
+#import "CPTimeManager.h"
+#import "SUMUser.h"
+#import "SUMRequest.h"
+#import "NSString+XDJEncrypt.h"
 #import "AJNotificationView.h"
-//#import "CPGlobalDataManager.h"
-//#import "SVProgressHUD+WayExtension.h"
-//#import "CPServerAPIManager.h"
+#import "CPGlobalDataManager.h"
+#import "SVProgressHUD+WayExtension.h"
+#import "CPServerAPIManager.h"
 #import "UIAlertView+Blocks.h"
-//#import "UIViewController+CPViewControllerExtension.h"
+#import "UIViewController+CPViewControllerExtension.h"
 
 #pragma mark- notification
 
@@ -180,7 +198,10 @@
 
 
 
-//#import <UMMobClick/MobClick.h>
+
+
+#endif
+
 //#import "DDGlobalModel.h"
 //#import "DDAPIConstant.h"
 //#import "DD_V_T_APIClient.h"

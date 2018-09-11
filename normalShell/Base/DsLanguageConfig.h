@@ -47,6 +47,21 @@
 
 #define DS_NOTE_NOTES_DETAIL1           @"DS_NOTE_NOTES_DETAIL1"
 
+
+
+#define DS_NOTE_STYLE_GRID           @"DS_NOTE_STYLE_GRID"
+#define DS_NOTE_STYLE_LIST          @"DS_NOTE_STYLE_LIST"
+#define DS_NOTE_DETAIL_EDIT           @"DS_NOTE_DETAIL_EDIT"
+#define DS_NOTE_DETAIL_TITLE           @"DS_NOTE_DETAIL_TITLE"
+#define DS_NOTE_DETAIL_INSETRTIMAGE           @"DS_NOTE_DETAIL_INSETRTIMAGE"
+
+
+
+
+
+
+
+
 #define DS_NOTE_BTN_SAVE              @"DS_NOTE_BTN_SAVE"
 
 #define DS_NOTE_BTN_UP           @"DS_NOTE_BTN_UP"

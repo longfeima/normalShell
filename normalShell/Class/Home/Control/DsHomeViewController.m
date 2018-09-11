@@ -14,6 +14,7 @@
 
 #import "DsCalendarViewController.h"
 #import "DsClockViewController.h"
+#import "DsToolsViewController.h"
 #import "DsNoteListViewController.h"
 #import "DsWeatherViewController.h"
 #import "UserFeedBackViewController.h"
@@ -60,16 +61,18 @@
                             },
                           @{@"title": DSLocalizedString(DS_HOME_CELL_CLOCK_TITLE),
                             @"detail": DSLocalizedString(DS_HOME_CELL_CLOCK_DETAIL),
-                            @"imageUrl": @"clock"},
-                          @{@"title": DSLocalizedString(DS_HOME_CELL_CALENDAR_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_CALENDAR_DETAIL),
-                            @"imageUrl": @"calendar"},
-                          @{@"title": DSLocalizedString(DS_HOME_CELL_WEATHER_TITLE),
-                            @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL),
-                            @"imageUrl": @"weather"}
+                            @"imageUrl": @"clock"}
+//                          ,
+//                          @{@"title": DSLocalizedString(DS_HOME_CELL_CALENDAR_TITLE),
+//                            @"detail": DSLocalizedString(DS_HOME_CELL_CALENDAR_DETAIL),
+//                            @"imageUrl": @"calendar"},
+//                          @{@"title": DSLocalizedString(DS_HOME_CELL_WEATHER_TITLE),
+//                            @"detail": DSLocalizedString(DS_HOME_CELL_WEATHER_DETAIL),
+//                            @"imageUrl": @"weather"}
                           ];
     self.functinoCollectionView = [[DsCustomCollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headerView.frame) + 10, DS_APP_SIZE_WIDTH, testInfo.count * 100) AndItemIndetifications:@[@"DsHomeViewFunctionCell"]];
     [self.bgScrollView addSubview:self.functinoCollectionView];
+    self.functinoCollectionView.scrollEnabled = NO;
     self.functinoCollectionView.itemsArray = @[@"DsHomeViewFunctionCell",
                                                @"DsHomeViewFunctionCell",
                                                @"DsHomeViewFunctionCell",
@@ -113,7 +116,7 @@
             break;
         case 1:
         {
-            DsClockViewController *vc = [[DsClockViewController alloc]init];
+            DsToolsViewController *vc = [[DsToolsViewController alloc]init];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }

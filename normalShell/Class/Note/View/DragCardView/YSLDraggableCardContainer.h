@@ -24,6 +24,7 @@ typedef NS_OPTIONS(NSInteger, YSLDraggableDirection) {
 - (UIView *)cardContainerViewNextViewWithIndex:(NSInteger)index;
 - (NSInteger)cardContainerViewNumberOfViewInIndex:(NSInteger)index;
 
+
 @end
 
 @protocol YSLDraggableCardContainerDelegate <NSObject>
@@ -34,6 +35,9 @@ typedef NS_OPTIONS(NSInteger, YSLDraggableDirection) {
         draggableDirection:(YSLDraggableDirection)draggableDirection;
 
 @optional
+
+- (void)dragedAtIndex:(NSInteger)index;
+
 - (void)cardContainerViewDidCompleteAll:(YSLDraggableCardContainer *)container;
 
 - (void)cardContainerView:(YSLDraggableCardContainer *)cardContainerView
@@ -52,6 +56,7 @@ typedef NS_OPTIONS(NSInteger, YSLDraggableDirection) {
 @property (nonatomic, assign) YSLDraggableDirection canDraggableDirection;
 @property (nonatomic, weak) id <YSLDraggableCardContainerDataSource> dataSource;
 @property (nonatomic, weak) id <YSLDraggableCardContainerDelegate> delegate;
+@property (nonatomic, assign) NSInteger currentIndex;
 
 /**
  *  reloads everything from scratch. redisplays card.
@@ -59,7 +64,7 @@ typedef NS_OPTIONS(NSInteger, YSLDraggableDirection) {
 - (void)reloadCardContainer;
 
 - (void)movePositionWithDirection:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic;
-- (void)movePositionWithDirection:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)())undoHandler;
+- (void)movePositionWithDirection:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)(void))undoHandler;
 
 - (UIView *)getCurrentView;
 

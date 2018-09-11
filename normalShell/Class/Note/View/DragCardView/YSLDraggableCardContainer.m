@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, MoveSlope) {  // 触摸点是上还是下
 @property (nonatomic, assign) CGFloat cardCenterX; // 视图中心点X值
 @property (nonatomic, assign) CGFloat cardCenterY; // 视图中心点Y值
 @property (nonatomic, assign) NSInteger loadedIndex;
-@property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) NSMutableArray *currentViews;
 @property (nonatomic, assign) BOOL isInitialAnimation;
 
@@ -54,6 +53,7 @@ typedef NS_ENUM(NSInteger, MoveSlope) {  // 触摸点是上还是下
     _moveSlope = MoveSlopeTop;
     _loadedIndex = 0.0f;
     _currentIndex = 0.0f;
+    
     _currentViews = [NSMutableArray array];
 }
 
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, MoveSlope) {  // 触摸点是上还是下
     [self viewInitialAnimation];
 }
 
-- (void)movePositionWithDirection:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)())undoHandler
+- (void)movePositionWithDirection:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)(void))undoHandler
 {
     [self cardViewDirectionAnimation:direction isAutomatic:isAutomatic undoHandler:undoHandler];
 }
@@ -94,7 +94,9 @@ typedef NS_ENUM(NSInteger, MoveSlope) {  // 触摸点是上还是下
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cardContainerViewNumberOfViewInIndex:)]) {
         NSInteger index = [self.dataSource cardContainerViewNumberOfViewInIndex:_loadedIndex];
         NSLog(@"index = %zd, _loadedIndex = %zd, _currentIndex = %zd", index, _loadedIndex, _currentIndex);
-        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(dragedAtIndex:)]) {
+            [self.delegate dragedAtIndex:_currentIndex];
+        }
         // all cardViews Dragging end
         if (index != 0 && index == _currentIndex) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(cardContainerViewDidCompleteAll:)]) {
@@ -143,7 +145,7 @@ typedef NS_ENUM(NSInteger, MoveSlope) {  // 触摸点是上还是下
         }
     }
 }
-- (void)cardViewDirectionAnimation:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)())undoHandler
+- (void)cardViewDirectionAnimation:(YSLDraggableDirection)direction isAutomatic:(BOOL)isAutomatic undoHandler:(void (^)(void))undoHandler
 {
     if (!_isInitialAnimation) { return; }
     UIView *view = [self getCurrentView];

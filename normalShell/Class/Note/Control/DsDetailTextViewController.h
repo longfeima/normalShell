@@ -9,5 +9,7 @@
 #import "DsBaseViewController.h"
 
 @interface DsDetailTextViewController : DsBaseViewController
+
 @property (nonatomic,strong) NSDictionary *dict;
+
 @end

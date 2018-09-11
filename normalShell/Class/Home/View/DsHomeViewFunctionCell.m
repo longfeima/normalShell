@@ -70,7 +70,8 @@
     [self.headImageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.bgImageV);
         make.left.equalTo(self.bgImageV).offset(20);
-        make.width.height.equalTo(@32);
+        make.width.equalTo(@26);
+        make.height.equalTo(@30);
     }];
     
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {

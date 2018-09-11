@@ -12,29 +12,211 @@
 #import "DsWeatherViewController1.h"
 #import "UserFeedBackViewController.h"
 #import "DsDetailTextViewController.h"
+#import "DsNoteTableViewCell.h"
+
+
 #define curViewHeight self.view.frame.size.height - 49 - 64
 #define KRedColor [UIColor redColor]
 #define KBlueColor [UIColor blueColor]
 #define CNavBgColor  [UIColor colorWithRed:133./256. green:205./256. blue:243./256. alpha:1.]
-@interface DsNoteViewController ()<YSLDraggableCardContainerDelegate,YSLDraggableCardContainerDataSource>
+@interface DsNoteViewController ()<YSLDraggableCardContainerDelegate,YSLDraggableCardContainerDataSource, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+
+@property (nonatomic, strong) UIScrollView *bgScrollView;
 
 @property (nonatomic, strong) YSLDraggableCardContainer *container;
 @property (nonatomic,strong) CardView *noDataView;
+
+@property (nonatomic, strong) UIImageView *noteImageV;
+
+@property (nonatomic, strong) UIButton *styleBtn;
+
+
+@property (nonatomic, strong) UITableView *tableView;
+
+
+@property (nonatomic, assign) BOOL showEmpetyView;
+
+
 @end
 
 @implementation DsNoteViewController
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self initUI];
-    [self.view  bringSubviewToFront:self.noDataView];
+    
+    id dataArray = [[DsDatabaseManger shareManager] fetchNotes];
+    if ([dataArray isKindOfClass:[NSArray class]]) {
+        NSArray *arr = [[DsDatabaseManger shareManager] fetchNotes];
+        if ([arr isEqualToArray:_datas]) {
+            return;
+        }else{
+            _datas = [NSMutableArray arrayWithArray:dataArray];
+            id style =  [DsUtils fetchFromUserDefaultsWithKey:@"style"];
+            if (style && [style isEqual:@(YES)]) {
+                [self.tableView reloadData];
+            }else{
+                [self.container reloadCardContainer];
+            }
+        }
+        id style =  [DsUtils fetchFromUserDefaultsWithKey:@"style"];
+        if (style && [style isEqual:@(YES)]) {
+            _noDataView.hidden = YES;
+        }
+        
+    }else{
+        id style =  [DsUtils fetchFromUserDefaultsWithKey:@"style"];
+        if (style && [style isEqual:@(YES)]) {
+            _noDataView.hidden = NO;
+        }
+    }
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = [UIColor yellowColor];
+    [self loadData];
+    self.showEmpetyView = YES;
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:self.styleBtn];
+    self.navigationItem.rightBarButtonItem = barItem;
+    [self.styleBtn addTarget:self action:@selector(changeStyle:) forControlEvents:UIControlEventTouchUpInside];
+    id style =  [DsUtils fetchFromUserDefaultsWithKey:@"style"];
+    if (style && [style isEqual:@(YES)]) {
+        self.styleBtn.selected = YES;
+        [self configSelectStyle];
+    }else{
+        self.styleBtn.selected = NO;
+        [self configNormalStyle];
+    }
+}
+- (void)changeStyle:(UIButton *)btn{
+    btn.selected = !btn.selected;
+    [DsUtils write2UserDefaults:@(btn.selected) forKey:@"style"];
+    if (btn.selected) {
+        [self configSelectStyle];
+    }else{
+        [self configNormalStyle];
+    }
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view{
+    UserFeedBackViewController *vc = [[UserFeedBackViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+//格子
+- (void)configNormalStyle{
+    [self.tableView removeFromSuperview];
+    self.tableView = nil;
+    self.bgScrollView.backgroundColor = DS_COLOR_HEXCOLOR(@"f1f1f1");
+    self.bgScrollView.contentSize = CGSizeMake(DS_APP_SIZE_WIDTH, 1000);
+    self.bgScrollView.showsVerticalScrollIndicator = NO;
+    self.bgScrollView.showsHorizontalScrollIndicator = NO;
+    [self.view addSubview:self.bgScrollView];
     [self initNoDataUI];
+    [self initUI];
+    [self.bgScrollView  bringSubviewToFront:self.noDataView];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noteTextClick)];
     [self.noDataView addGestureRecognizer:tap];
+    if (self.datas.count <= 0) {
+        return;
+    }
+    NSDictionary *imDict = self.datas[0];
+    if ([imDict objectForKey:@"image"]) {
+        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:[imDict objectForKey:@"image"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *image = [UIImage imageWithData:imageData];
+        if (image) {
+            CGRect frame = self.container.frame;
+            CGSize size = image.size;
+            CGFloat H = (DS_APP_SIZE_WIDTH - 40) / size.width * size.height;
+            self.noteImageV.frame = CGRectMake(20 , CGRectGetMaxY(frame) + 40, DS_APP_SIZE_WIDTH - 40, H);
+        }
+    }
+    [self.bgScrollView addSubview:self.noteImageV];
+    [self.bgScrollView sendSubviewToBack:self.noteImageV];
 }
+
+//列表
+- (void)configSelectStyle{
+//    [self.bgScrollView removeAllSubviews];
+    [self.bgScrollView removeFromSuperview];
+    self.bgScrollView = nil;
+    [self.view addSubview:self.tableView];
+    [self.tableView reloadData];
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellIndentifier = @"1234344";
+    DsNoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+    if (!cell) {
+        cell = [[DsNoteTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+    }
+    cell.infoDict = self.datas[indexPath.item];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DsDetailTextViewController *vc = [[DsDetailTextViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.dict = _datas[indexPath.item];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.datas.count;
+    
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
+
+
+///////////
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return DS_APP_ISIPHONE_4 ? - 63 : (DS_APP_ISIPHONE_5 ? -85 : -100);
+}
+
+- (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
+    return 31;
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"emptyList"];
+}
+
+- (BOOL)emptyDataSetShouldDisplay {
+    return self.showEmpetyView;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text =  @"您还没有开始写日记";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: DS_APP_FONT(14),
+                                 NSForegroundColorAttributeName: DS_COLOR_HEXCOLOR(@"bebebe")};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)initNoDataUI{
     if (!_noDataView) {
         _noDataView = [[CardView alloc] initWithFrame:CGRectMake(10, 10 + DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH - 20, DS_APP_SIZE_WIDTH - 20)];
@@ -43,7 +225,7 @@
         _noDataView.hidden = YES;
         _noDataView.backgroundColor = [UIColor whiteColor];
         _noDataView.userInteractionEnabled = YES;
-        [self.view addSubview:_noDataView];
+        [self.bgScrollView addSubview:_noDataView];
         
     }
 }
@@ -56,40 +238,13 @@
 -(void)initUI{
     // 创建 _container
     _container = [[YSLDraggableCardContainer alloc]init];
-    _container.frame = CGRectMake(0, DS_APP_NAV_HEIGHT,DS_APP_SIZE_WIDTH, curViewHeight);
+    _container.frame = CGRectMake(0, 0,DS_APP_SIZE_WIDTH,  DS_APP_SIZE_WIDTH - 20);
     _container.backgroundColor = [UIColor clearColor];
     _container.userInteractionEnabled = YES;
     _container.dataSource = self;
     _container.delegate = self;
     //    _container.canDraggableDirection = YSLDraggableDirectionLeft | YSLDraggableDirectionRight | YSLDraggableDirectionUp;
-    [self.view addSubview:_container];
-    
-    // 创建上下左右四个按钮
-    for (int i = 0; i < 4; i++) {
-        
-        UIView *view = [[UIView alloc]init];
-        CGFloat size = self.view.frame.size.width / 4;
-        view.frame = CGRectMake(size * i, curViewHeight - kTabBarHeight - size, size, size);
-        //        view.backgroundColor = [UIColor darkGrayColor];
-        [self.view addSubview:view];
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(10, 10, size - 20, size - 20);
-        [button setBackgroundColor:CNavBgColor];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont fontWithName:@"Futura-Medium" size:18];
-        button.clipsToBounds = YES;
-        button.layer.cornerRadius = button.frame.size.width / 2;
-        button.tag = i;
-        [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
-        [view addSubview:button];
-        
-        if (i == 0) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_UP) forState:UIControlStateNormal]; }
-        if (i == 1) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_DOWN) forState:UIControlStateNormal]; }
-        if (i == 2) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_LEFT) forState:UIControlStateNormal]; }
-        if (i == 3) { [button setTitle:DSLocalizedString(DS_NOTE_BTN_RIGHT) forState:UIControlStateNormal]; }
-    }
-    
+    [self.bgScrollView addSubview:_container];
     // 获取数据
     [self loadData];
     
@@ -99,59 +254,19 @@
 }
 - (void)loadData
 {
-    
     id dataArray = [[DsDatabaseManger shareManager] fetchNotes];
     if ([dataArray isKindOfClass:[NSArray class]]) {
         _datas = [NSMutableArray arrayWithArray:dataArray];
-        _noDataView.hidden = YES;
+//        _noDataView.hidden = YES;
+        self.showEmpetyView = YES;
     }else{
-        _noDataView.hidden = NO;
+        self.showEmpetyView = NO;
+//        _noDataView.hidden = NO;
     }
-    //    _datas = [NSMutableArray array];
-    
-    //    for (int i = 0; i < 20; i++) {
-    //        NSDictionary *dict = @{@"image" : [NSString stringWithFormat:@"photo_sample_0%d",i%7 + 1],
-    //                               @"name" : @"YSLDraggableCardContainer Demo"};
-    //        [_datas addObject:dict];
-    //    }
 }
 
 #pragma mark -- Selector
-- (void)buttonTap:(UIButton *)button
-{
-    if (_datas.count == 0) {
-        return;
-    }
-    if (button.tag == 0) {
-        [_container movePositionWithDirection:YSLDraggableDirectionUp isAutomatic:YES];
-    }
-    if (button.tag == 1) {
-        
-        __weak typeof(self) weak_self=self;
-        [_container movePositionWithDirection:YSLDraggableDirectionDown isAutomatic:YES undoHandler:^{
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
-                                                                                     message:@"Do you want to reset?"
-                                                                              preferredStyle:UIAlertControllerStyleAlert];
-            
-            [alertController addAction:[UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                [weak_self.container movePositionWithDirection:YSLDraggableDirectionDown isAutomatic:YES];
-            }]];
-            
-            [alertController addAction:[UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                [weak_self.container movePositionWithDirection:YSLDraggableDirectionDefault isAutomatic:YES];
-            }]];
-            
-            [self presentViewController:alertController animated:YES completion:nil];
-        }];
-        
-    }
-    if (button.tag == 2) {
-        [_container movePositionWithDirection:YSLDraggableDirectionLeft isAutomatic:YES];
-    }
-    if (button.tag == 3) {
-        [_container movePositionWithDirection:YSLDraggableDirectionRight isAutomatic:YES];
-    }
-}
+
 
 #pragma mark -- YSLDraggableCardContainer DataSource
 // 根据index获取当前的view
@@ -160,18 +275,35 @@
     NSDictionary *dict = _datas[index];
     CardView *view = [[CardView alloc]initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 20, self.view.frame.size.width - 20)];
     view.backgroundColor = [UIColor whiteColor];
-    //    view.imageView.image = [UIImage imageNamed:dict[@"image"]];
-    //    view.label.text = [NSString stringWithFormat:@"%@  %ld",dict[@"name"],(long)index];
-    
-    //    if (_datas.count == 0) {
-    //        view.titleLabel.text = @"您还没记录任何事件!";
-    //        view.label.text = @"记录您的精彩瞬间吧......";
-    //    }else{
     view.titleLabel.text = [dict objectForKey:@"title"];
     view.label.text = [dict objectForKey:@"text"];
-    //    }
+
+    
     return view;
 }
+
+- (void)dragedAtIndex:(NSInteger)index{
+    index = index >= self.datas.count ? 0 : index;
+    NSDictionary *imDict = self.datas[index];
+    if ([imDict objectForKey:@"image"]) {
+        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:[imDict objectForKey:@"image"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *image = [UIImage imageWithData:imageData];
+        if (image) {
+            CGRect frame = self.container.frame;
+            CGSize size = image.size;
+            CGFloat H = (DS_APP_SIZE_WIDTH - 40) / size.width * size.height;
+            self.noteImageV.frame = CGRectMake(20 , CGRectGetMaxY(frame) + 40, DS_APP_SIZE_WIDTH - 40, H);
+            self.noteImageV.image = image;
+            
+            self.noteImageV.hidden = NO;
+        }else{
+            self.noteImageV.hidden = YES;
+        }
+    }else{
+        self.noteImageV.hidden = YES;
+    }
+}
+
 
 // 获取view的个数
 - (NSInteger)cardContainerViewNumberOfViewInIndex:(NSInteger)index
@@ -245,11 +377,6 @@
 // 点击view调用这个
 - (void)cardContainerView:(YSLDraggableCardContainer *)cardContainerView didSelectAtIndex:(NSInteger)index draggableView:(UIView *)draggableView
 {
-    //    if (_datas.count == 0) {
-    //        UserFeedBackViewController *vc = [[UserFeedBackViewController alloc] init];
-    //        vc.hidesBottomBarWhenPushed = YES;
-    //        [self.navigationController pushViewController:vc animated:YES];
-    //    }else{
     DsDetailTextViewController *vc = [[DsDetailTextViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.dict = _datas[index];
@@ -257,6 +384,53 @@
     //}
     NSLog(@"++ index : %ld",(long)index);
 }
+
+- (UIScrollView *)bgScrollView{
+    if (!_bgScrollView) {
+        _bgScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT - DS_APP_NAV_HEIGHT - DS_APP_TAB_HEIGHT)];
+        _bgScrollView.contentSize = CGSizeMake(DS_APP_SIZE_WIDTH, DS_APP_NAV_HEIGHT);
+        _bgScrollView.emptyDataSetSource = self;
+        _bgScrollView.emptyDataSetDelegate = self;
+    }
+    return _bgScrollView;
+}
+
+- (UIImageView *)noteImageV{
+    if (!_noteImageV) {
+        _noteImageV = [UIImageView new];
+    }
+    return _noteImageV;
+}
+
+- (UIButton *)styleBtn{
+    if (!_styleBtn) {
+        _styleBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+        [_styleBtn setTitle:DSLocalizedString(DS_NOTE_STYLE_LIST) forState:UIControlStateNormal];
+        [_styleBtn setTitle:DSLocalizedString(DS_NOTE_STYLE_GRID) forState:UIControlStateSelected];
+        _styleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_styleBtn setTitleColor:DS_COLOR_HEXCOLOR(@"333333") forState:UIControlStateNormal];
+        [_styleBtn setTitleColor:DS_COLOR_HEXCOLOR(@"666666") forState:UIControlStateSelected];
+        _styleBtn.selected = YES;
+    }
+    return _styleBtn;
+}
+
+
+//////
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, DS_APP_NAV_HEIGHT, DS_APP_SIZE_WIDTH, DS_APP_SIZE_HEIGHT - DS_APP_NAV_HEIGHT - DS_APP_TAB_HEIGHT) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.emptyDataSetDelegate = self;
+        _tableView.emptyDataSetSource = self;
+        _tableView.separatorColor = [UIColor clearColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _tableView;
+}
+
+
 
 
 @end

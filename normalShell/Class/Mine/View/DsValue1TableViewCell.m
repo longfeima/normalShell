@@ -79,7 +79,7 @@
     [self.headImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);
         make.centerY.equalTo(self.contentView);
-        make.width.height.equalTo(@26);
+        make.width.height.equalTo(@21);
     }];
     
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {

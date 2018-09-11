@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "DsBaseViewController.h"
+
 @interface UserFeedBackViewController : DsBaseViewController
+
+@property (nonatomic, strong) NSDictionary *infoDict;
 
 @end

@@ -59,7 +59,7 @@
 }
 - (void)reloadData{
     if (!_carview) {
-        _carview = [[CardView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height + 10)];
+        _carview = [[CardView alloc] initWithFrame:CGRectMake(10, 10, self.width - 20 , self.height - 10)];
         _carview.backgroundColor = [UIColor whiteColor];
     }
     _IsNoNotes = YES;
@@ -67,7 +67,7 @@
     id dataArray = [[DsDatabaseManger shareManager] fetchNotes];
     if ([dataArray isKindOfClass:[NSArray class]]) {
         _dataArr = (NSArray*)dataArray;
-        dict = [_dataArr objectAtIndex:0];
+        dict = _dataArr.lastObject;
         _IsNoNotes = NO;
     }else{
         _IsNoNotes = YES;

@@ -15,8 +15,16 @@ pod 'AJNotificationView', '0.7'
 pod 'TOWebViewController', '2.2.6'
 pod 'SVProgressHUD', '2.1.2'
 pod 'UIAlertView+Blocks', '0.9'
-pod 'IQKeyboardManager', '4.0.10'
-pod 'UMengAnalytics', '4.2.4'
+pod 'IQKeyboardManager'
+#pod 'UMengAnalytics', '4.2.4'
 pod 'RTLabel', '1.0.1'
 pod 'Toast', '~> 3.1.0'
+pod "DZNEmptyDataSet"
+pod 'UMCCommon'
+pod 'UMCPush'
+pod 'UMCSecurityPlugins'
+pod 'UMCAnalytics'
+pod 'UMCSecurityPlugins'
+
+
 end
